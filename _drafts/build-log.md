@@ -42,7 +42,7 @@ I'd add:
 
 # Keymap
 
-I decided to do all these while I was away at the beach for a few days with my family. Armed with only a pencil and some paper, I set to designing a relatively minimal keymap (I'm not aware that with stenography/chording you can take this even further!). I worked out the main key combinations. My wife probably thought I was crazed.
+I decided to do all these while I was away at the beach for a few days with my family. Armed with only a pencil and some paper, I set to designing a relatively minimal keymap (I'm now aware that with stenography/chording you can take this even further!). I worked out the main key combinations. Over many pages. My wife probably thought I was crazed.
 
 ![]({{site.baseurl}}/assets/images/layout_test.jpg)
 
