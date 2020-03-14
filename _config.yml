@@ -1,7 +1,0 @@
-theme: jekyll-theme-slate
-title: Oddball
-defaults:
-  - scope:
-      path: "assets/images"
-    values:
-      image: true
