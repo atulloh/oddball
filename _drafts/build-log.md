@@ -30,7 +30,7 @@ I started looking around, and noticed on [/r/MechanicalKeyboards](https://www.re
 
 <figure>
   <img src="{{site.baseurl}}/assets/images/ergodox.jpg" alt="ErgoDox EZ"/>
-  <figcaption>The ErgoDox was great but I had some issues with it</figcaption>
+  <figcaption>My initial setup was great but I had some issues with it</figcaption>
 </figure>
 
 # Keymap
