@@ -1,5 +1,7 @@
 include<../config.scad>;
 use<../modules/plate.scad>;
+use<../modules/keys.scad>;
+use<../modules/bearing_mount.scad>;
 
 mirror([1,0,0]){
     linear_extrude(PLATE_THICKNESS)

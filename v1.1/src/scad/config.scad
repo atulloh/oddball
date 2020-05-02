@@ -2,7 +2,7 @@
 
 DRAW_KEYS = true;
 
-// constants
+// MX constants
 
 1U = 19.05;
 SWITCH_WIDTH = 14;
@@ -11,11 +11,11 @@ SWITCH_WIDTH = 14;
 
 NUT_DIAMETER = 4;
 NUT_TOLERENCE = 0.5;
-
-BOLT_DIAMETER = 2.4; // M2 cleanance
+// M2 cleanance is 2.4mm
+BOLT_DIAMETER = 2.4;
 BOLT_TOLERENCE = 0.1;
-
 STANDOFF_HEIGHT = 10;
+BEARING_DIAMETER = 3.175;
 
 // plate
 
@@ -32,6 +32,7 @@ TRACKBALL_LENS_HEIGHT_ABOVE_BOARD = 1.5;// TODO: measure
 TRACKBALL_PCB_MOUNT_OFFSET = 13.5;
 TRACKBALL_PCB_DIAMETER = 32;
 TRACKBALL_PCB_THICKNESS = 1.5;
+TRACKBALL_BEARING_OFFSET_Z = 2.5;
 
 // layouts in 1U space
 
@@ -50,7 +51,7 @@ THUMB_BOLT_HOLES =
     [[1, 1],
      [1, 0.0925]];
 
-THUMB_TRACKBALL_GRID = [[0, 0], [1.2, -0.0, "trackball"]];
+THUMB_TRACKBALL_GRID = [[0, 0], [1.4, 0, "trackball"]];
 
 THUMB_TRACKBALL_BOLT_HOLES = 
     [[1, 0.9075],
