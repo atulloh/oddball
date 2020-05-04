@@ -1,6 +1,6 @@
-include<../config.scad>;
-use<../modules/plate.scad>;
-use<../modules/keys.scad>;
+include <../config.scad>;
+use <../modules/plate.scad>;
+use <../modules/keys.scad>;
 
 linear_extrude(PLATE_THICKNESS)
     plate(

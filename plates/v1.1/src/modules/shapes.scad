@@ -1,4 +1,8 @@
-module squircle(size, radius, center = false){
+// draws a square with rounded corners
+module squircle(
+    size = [1,1],
+    radius = 1,
+    center = false){
     
     x = size[0];
     y = size[1];

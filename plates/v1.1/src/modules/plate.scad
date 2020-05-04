@@ -1,4 +1,4 @@
-include<../config.scad>;
+include <../config.scad>;
 
 function getTrackballZ() = 
     PLATE_THICKNESS +
@@ -77,4 +77,5 @@ plate(
     keyPositions = FINGER_GRID,
     keyHeight = 1.0,
     boltPositions = FINGER_BOLT_HOLES,
-    cutSwitchHoles = true);
+    cutSwitchHoles = true.
+    $fn = 100);

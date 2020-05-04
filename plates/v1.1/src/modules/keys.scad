@@ -1,8 +1,8 @@
-include<../config.scad>;
-use<./plate.scad>;
-use<./bearing_mount.scad>;
-use<./switch.scad>;
-use<./keycap.scad>;
+include <../config.scad>;
+use <./plate.scad>;
+use <./bearingMount.scad>;
+use <./switch.scad>;
+use <./keycap.scad>;
 
 // draws 3D keycaps and trackballs with the given positions in 1U space
 module keys(
@@ -38,4 +38,4 @@ module keys(
                 }
 }
 
-keys(FINGER_GRID, $fn = 50);
+keys(FINGER_GRID, $fn = 100);
