@@ -1,6 +1,6 @@
 // draw flags
 
-DRAW_DEBUG = false;
+DRAW_DEBUG = true;
 
 // MX constants
 
@@ -54,6 +54,7 @@ CASE_PLATE_BEZEL = 1;
 CASE_PLATE_TOLERENCE = 0.25;
 CASE_CURVE_RADIUS = 1;
 CASE_PLATE_MOUNT_COVERAGE = 1;
+CASE_BOLT_HOUSING_WIDTH = 1.5;
 
 // layouts in 1U space
 
@@ -80,6 +81,6 @@ THUMB_TRACKBALL_BOLT_HOLES =
 
 // plane rotations
 
-HAND_ROTATION = [0, -12, 3];
+HAND_ROTATION = [0, -12, 0];
 THUMB_ROTATION = [10, -2, -10.25];
 THUMB_OFFSET = [80.5, -22, 13.5];
