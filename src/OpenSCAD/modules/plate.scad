@@ -23,7 +23,7 @@ module plate(
     keyPositions = [],
     keyHeight = 1.0,
     boltPositions = [],
-    cutSwitchHoles = true,
+    cutHoles = true,
     hull = false){
 
     module solidPlate(){
@@ -33,7 +33,7 @@ module plate(
 
                     if(keyPosition.z == "trackball")
                         translate([0.5, 0.5 * keyHeight] * 1U + [PLATE_BEZEL,PLATE_BEZEL])
-                            offset(r = PLATE_BEZEL + (1U - SWITCH_WIDTH) * 0.5)
+                            offset(r = TRACKBALL_PLATE_BEZEL + (1U - SWITCH_WIDTH) * 0.5)
                                 circle(r = getTrackballHoleRadius());
 
                     else
@@ -56,7 +56,7 @@ module plate(
         // cutouts
         translate([PLATE_BEZEL, PLATE_BEZEL]){
 
-            if(cutSwitchHoles)
+            if(cutHoles){
                 for(keyPosition = keyPositions)
                     translate([keyPosition.x + 0.5, (keyPosition.y + 0.5) * keyHeight] * 1U)
 
@@ -66,18 +66,19 @@ module plate(
                         translate(-[SWITCH_WIDTH, SWITCH_WIDTH] * 0.5)
                             square([SWITCH_WIDTH,SWITCH_WIDTH]);                        
 
-            for(keyPosition = keyPositions)
-                if(keyPosition.z == "trackball")
-                    translate([keyPosition.x + 0.5, (keyPosition.y + 0.5) * keyHeight] * 1U){
-                        translate([0, TRACKBALL_PCB_MOUNT_OFFSET, 0])
-                            boltHole();
-                        translate([0, -TRACKBALL_PCB_MOUNT_OFFSET, 0])
-                            boltHole();
-                    }
+                for(keyPosition = keyPositions)
+                    if(keyPosition.z == "trackball")
+                        translate([keyPosition.x + 0.5, (keyPosition.y + 0.5) * keyHeight] * 1U){
+                            translate([0, TRACKBALL_PCB_MOUNT_OFFSET, 0])
+                                boltHole();
+                            translate([0, -TRACKBALL_PCB_MOUNT_OFFSET, 0])
+                                boltHole();
+                        }
 
-            for(boltPosition = boltPositions)
-                translate([boltPosition.x, boltPosition.y * keyHeight] * 1U)
-                    boltHole();
+                for(boltPosition = boltPositions)
+                    translate([boltPosition.x, boltPosition.y * keyHeight] * 1U)
+                        boltHole();
+            }
         }
     }
 }
@@ -86,5 +87,5 @@ plate(
     keyPositions = FINGER_GRID,
     keyHeight = 1.0,
     boltPositions = FINGER_BOLT_HOLES,
-    cutSwitchHoles = true,
+    cutHoles = true,
     $fn = 100);

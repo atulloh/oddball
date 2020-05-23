@@ -7,11 +7,11 @@ linear_extrude(PLATE_THICKNESS)
         keyPositions = THUMB_GRID,
         keyHeight = 1.25,
         boltPositions = THUMB_BOLT_HOLES,
-        cutSwitchHoles = true,
+        cutHoles = true,
         $fn = 100);
     
 if(DRAW_DEBUG)
     %keys(
         keyPositions = THUMB_GRID,
         keyHeight = 1.25,
-        $fn = 50);
+        $fn = 20);
