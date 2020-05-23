@@ -12,7 +12,7 @@ mirror([1,0,0]){
             hull = true,
             $fn = 100);
     
-    if(DRAW_KEYS)
+    if(DRAW_DEBUG)
         %keys(
             keyPositions = THUMB_TRACKBALL_GRID,
             keyHeight = 1.25,

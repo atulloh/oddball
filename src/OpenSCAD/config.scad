@@ -1,6 +1,6 @@
 // draw flags
 
-DRAW_KEYS = true;
+DRAW_DEBUG = false;
 
 // MX constants
 
@@ -20,7 +20,7 @@ BEARING_DIAMETER = 3.175;
 // plate
 
 PLATE_THICKNESS = 1.5;
-PLATE_BEZEL = 2;
+PLATE_BEZEL = 1;
 PLATE_CURVE_RADIUS = 1;
 
 // trackball
@@ -41,6 +41,19 @@ BEARING_MOUNT_TOP_X_MIN = 2.5;
 BEARING_MOUNT_TOP_X_MAX = 4.0;
 BEARING_MOUNT_HEIGHT = 4.5;
 BEARING_BOLT_CLEARANCE_Z = 1;
+
+// PCB
+
+PCB_PLATE_OFFSET_Z = 5;
+PCB_THICKNESS = 1.5;
+PCB_UNDERSIDE_CLEARANCE = 3;
+
+// case
+
+CASE_PLATE_BEZEL = 1;
+CASE_PLATE_TOLERENCE = 0.25;
+CASE_CURVE_RADIUS = 1;
+CASE_PLATE_MOUNT_COVERAGE = 1;
 
 // layouts in 1U space
 
@@ -64,3 +77,9 @@ THUMB_TRACKBALL_GRID = [[0, 0], [1.36, 0, "trackball"]];
 THUMB_TRACKBALL_BOLT_HOLES = 
     [[1, 0.9075],
      [1, 0.0925]];
+
+// plane rotations
+
+HAND_ROTATION = [0, -12, 3];
+THUMB_ROTATION = [10, -2, -10.25];
+THUMB_OFFSET = [80.5, -22, 13.5];

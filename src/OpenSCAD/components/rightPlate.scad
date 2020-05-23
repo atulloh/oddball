@@ -11,7 +11,7 @@ mirror([1,0,0]){
             cutSwitchHoles = true,
             $fn = 100);
         
-    if(DRAW_KEYS)
+    if(DRAW_DEBUG)
         %keys(
             keyPositions = FINGER_GRID,
             keyHeight = 1.0,
