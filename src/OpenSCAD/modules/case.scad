@@ -172,72 +172,76 @@ module case(sections = []){
                 section[3],
                 section[4],
                 section[5]);
+
+        // custom cable cutouts; not really parameterised at the moment
+         rotate([0,0, HAND_ROTATION.z])
+            rotate([0, HAND_ROTATION.y, 0])
+                rotate([HAND_ROTATION.x,0,0]){
+
+                    // thumb cluster channel
+                    translate([89,8,0])
+                        rotate([90,0,0])
+                            linear_extrude(10)
+                                squircle([14,6], radius = 1);
+
+                    // microcontroller
+                    usbInnerHoleSize = [8, 6, 0];
+                    usbOuterHoleSize = usbInnerHoleSize + [3,3,0];
+                    translate([PLATE_BEZEL + 3.5 * 1U, 75, 2])
+                        rotate([90,0,0]){
+
+                            // outer hole
+                            translate([0,0,-1.5] - usbOuterHoleSize * 0.5)
+                                linear_extrude(10)
+                                    squircle(usbOuterHoleSize, radius = 0.5);
+
+                            // inner hole
+                            translate([0,0,8]-usbInnerHoleSize * 0.5)
+                                linear_extrude(10)
+                                    squircle(usbInnerHoleSize, radius = 0.5);
+                        }
+                    
+                    // trrs
+                    trrsInnerHoleSize = 2.75;
+                    trrsOuterHoleSize = 5.5;
+                    translate([PLATE_BEZEL + 5.3 * 1U, 70, 3])
+                        rotate([90,0,0]){
+
+                            // outer hole
+                            translate([0,0,-1.5])
+                                linear_extrude(10)
+                                    circle(r = trrsOuterHoleSize);
+
+                            // inner hole
+                            translate([0,0,0])
+                                linear_extrude(10)
+                                    circle(r = trrsInnerHoleSize);
+                        }
+                    
+                    // reset button
+                    resetHoleSize = 1.0;
+                    translate([PLATE_BEZEL + 1.9 * 1U, 68, 4])
+                        rotate([90,0,0]){
+                            translate([0,0,0])
+                                linear_extrude(10)
+                                    circle(r = resetHoleSize);
+                        }
+                }
     }
 }
 
-difference(){
-    case([
-        caseSection(
-            keyPositions = FINGER_GRID,
-            keyHeight = 1.0,
-            rotation = HAND_ROTATION,
-            boltPositions = FINGER_BOLT_HOLES,
-            plateHull = false),
-        caseSection(
-            keyPositions = THUMB_GRID,
-            keyHeight = 1.25,
-            offset = THUMB_OFFSET,
-            rotation = THUMB_ROTATION,
-            boltPositions = THUMB_BOLT_HOLES,
-            plateHull = false)],
-        $fn = 20);
-
-        
-
-    //translate([offset.x, offset.y, 0])
-        rotate([0,0, HAND_ROTATION.z])
-            //translate([0,0, offset.z])
-                rotate([0, HAND_ROTATION.y, 0])
-                    rotate([HAND_ROTATION.x,0,0]){
-
-                        // thumb cluster channel
-                        translate([89,8,0])
-                            rotate([90,0,0])
-                                linear_extrude(10)
-                                    squircle([14,6], radius = 1);
-
-                        // microcontroller
-                        usbInnerHoleSize = [8, 6, 0];
-                        usbOuterHoleSize = usbInnerHoleSize + [3,3,0];
-                        translate([PLATE_BEZEL + 3.5 * 1U, 75, 2])
-                            rotate([90,0,0]){
-
-                                // outer hole
-                                translate([0,0,-1.5] - usbOuterHoleSize * 0.5)
-                                    linear_extrude(10)
-                                        squircle(usbOuterHoleSize, radius = 0.5);
-
-                                // inner hole
-                                translate([0,0,8]-usbInnerHoleSize * 0.5)
-                                    linear_extrude(10)
-                                        squircle(usbInnerHoleSize, radius = 0.5);
-                            }
-                        
-                        // trrs
-                        trrsInnerHoleSize = 2.75;
-                        trrsOuterHoleSize = 5.5;
-                        translate([PLATE_BEZEL + 5.3 * 1U, 70, 3])
-                            rotate([90,0,0]){
-
-                                // outer hole
-                                translate([0,0,-1.5])
-                                    linear_extrude(10)
-                                        circle(r = trrsOuterHoleSize);
-
-                                // inner hole
-                                translate([0,0,0])
-                                    linear_extrude(10)
-                                        circle(r = trrsInnerHoleSize);
-                            }
-                    }
-}
+case([
+    caseSection(
+        keyPositions = FINGER_GRID,
+        keyHeight = 1.0,
+        rotation = HAND_ROTATION,
+        boltPositions = FINGER_BOLT_HOLES,
+        plateHull = false),
+    caseSection(
+        keyPositions = THUMB_GRID,
+        keyHeight = 1.25,
+        offset = THUMB_OFFSET,
+        rotation = THUMB_ROTATION,
+        boltPositions = THUMB_BOLT_HOLES,
+        plateHull = false)],
+    $fn = 20);
