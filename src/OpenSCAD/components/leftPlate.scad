@@ -7,11 +7,11 @@ linear_extrude(PLATE_THICKNESS)
         keyPositions = FINGER_GRID,
         keyHeight = 1.0,
         boltPositions = FINGER_BOLT_HOLES,
-        cutSwitchHoles = true,
+        cutHoles = true,
         $fn = 100);
     
-if(DRAW_KEYS)
+if(DRAW_DEBUG)
     %keys(
         keyPositions = FINGER_GRID,
         keyHeight = 1.0,
-        $fn = 50);
+        $fn = 20);

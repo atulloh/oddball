@@ -8,13 +8,13 @@ mirror([1,0,0]){
             keyPositions = THUMB_TRACKBALL_GRID,
             keyHeight = 1.25,
             boltPositions = THUMB_TRACKBALL_BOLT_HOLES,
-            cutSwitchHoles = true,
+            cutHoles = true,
             hull = true,
             $fn = 100);
     
-    if(DRAW_KEYS)
+    if(DRAW_DEBUG)
         %keys(
             keyPositions = THUMB_TRACKBALL_GRID,
             keyHeight = 1.25,
-            $fn = 50);
+            $fn = 20);
 }

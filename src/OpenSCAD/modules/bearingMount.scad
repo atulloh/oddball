@@ -14,7 +14,7 @@ module hole(){
 module bearingMount(){
 
     trackballRadius = getTrackballHoleRadius();
-    ringWidthBottom = PLATE_BEZEL + (1U - SWITCH_WIDTH) * 0.5;
+    ringWidthBottom = TRACKBALL_PLATE_BEZEL + (1U - SWITCH_WIDTH) * 0.5;
     
     difference(){
         
