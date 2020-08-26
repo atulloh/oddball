@@ -16,6 +16,11 @@ comments: true
 
 # Build Log
 
+<figure>
+  <img src="{{site.baseurl}}/assets/images/assembled.jpg" alt="Assembled"/>
+  <figcaption>Here it is! Nearly done; still missing screws long enough to hold the plates down</figcaption>
+</figure>
+
 ## Out with the old
 
 I write code full time, and a bit in my spare time, so I'm typing on a keyboard a fair bit.
@@ -207,7 +212,7 @@ For manufacturing, I ended up going with [JLCPCB](http://jlcpcb.com/), a Chinese
 
 <figure>
   <img src="{{site.baseurl}}/assets/images/assembled.jpg" alt="Assembled"/>
-  <figcaption>Mostly done; still missing screws long enough to hold the plates down</figcaption>
+  <figcaption>And again, the (nearly) final product!</figcaption>
 </figure>
 
 # Finial thoughts
