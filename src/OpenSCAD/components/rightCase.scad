@@ -30,4 +30,4 @@ module rightCase(){
                 plateUndersideClearance = TRACKBALL_PCB_MOUNT_OFFSET + 9)]);
 }
 
-rightCase($fn = 10);
+rightCase($fn = 100);
