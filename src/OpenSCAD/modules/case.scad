@@ -11,7 +11,8 @@ function caseSection(
     boltPositions = [],
     plateHull = false,
     caseBottomThickness = 0,
-    plateUndersideClearance = 0) = [
+    plateUndersideClearance = 0,
+    feetPositions = []) = [
         keyPositions,
         keyHeight,
         offset,
@@ -19,7 +20,8 @@ function caseSection(
         boltPositions,
         plateHull,
         caseBottomThickness,
-        plateUndersideClearance];
+        plateUndersideClearance,
+        feetPositions];
 
 module case(sections = []){
 
@@ -180,10 +182,10 @@ module case(sections = []){
                 section[6],
                 section[7]);
 
-         // custom cable cutouts; not really parameterised at the moment
-         rotate([0,0, HAND_ROTATION.z])
+        // custom cable cutouts; not really parameterised at the moment
+        rotate([0,0, HAND_ROTATION.z]){
             rotate([0, HAND_ROTATION.y, 0])
-                rotate([HAND_ROTATION.x,0,0]){                    
+                rotate([HAND_ROTATION.x,0,0])
                     translate([0,0, CASE_BOTTOM_THICKNESS]){
                         
                         // thumb cluster channel
@@ -235,7 +237,14 @@ module case(sections = []){
                                         circle(r = resetHoleSize);
                             }
                     }
-                }
+                    
+
+            // feet cutouts
+            linear_extrude(FEET_HEIGHT)
+                for(foot = sections[0][8]) // TODO: code smell just pulling first feet set
+                    translate(foot * 1U)
+                        circle(d = FEET_DIAMETER + FEET_TOLERENCE);
+        }
     }
 }
 
@@ -250,7 +259,8 @@ case([
         plateUndersideClearance =
             PCB_PLATE_OFFSET_Z + 
             PCB_UNDERSIDE_CLEARANCE + 
-            PCB_THICKNESS),
+            PCB_THICKNESS,
+        feetPositions = FEET_POSITIONS),
     caseSection(
         keyPositions = THUMB_GRID,
         keyHeight = 1.25,

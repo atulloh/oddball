@@ -56,13 +56,13 @@ CASE_PLATE_TOLERENCE = 0.25;
 CASE_CURVE_RADIUS = 1;
 CASE_PLATE_MOUNT_COVERAGE = 1;
 CASE_BOLT_HOUSING_WIDTH = 1.5;
-CASE_BOTTOM_THICKNESS = 1;
+CASE_BOTTOM_THICKNESS = 2;
 
 // case feet cutouts
 
 FEET_DIAMETER = 15;
 FEET_TOLERENCE = 1.25;
-FEET_HEIGHT = 2.2;
+FEET_HEIGHT = 1;
 
 // layouts in 1U space
 
@@ -86,6 +86,14 @@ THUMB_TRACKBALL_GRID = [[0, 0], [1.36, 0, "trackball"]];
 THUMB_TRACKBALL_BOLT_HOLES = 
     [[1, 0.9075],
      [1, 0.0925]];
+
+FEET_POSITIONS =
+    [[0.3, 2.75], [5.6, 2.85],
+     [0.3, 0.3], [5.95, -1.1]];
+
+THUMB_FEET_POSITIONS =
+    [[0.3, 2.75], [5.6, 2.85],
+     [0.3, 0.3], [6.45, -1.25]];
 
 // plane rotations
 

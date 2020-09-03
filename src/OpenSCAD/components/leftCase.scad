@@ -13,7 +13,8 @@ module leftCase(){
             plateUndersideClearance =
                 PCB_PLATE_OFFSET_Z + 
                 PCB_UNDERSIDE_CLEARANCE + 
-                PCB_THICKNESS),
+                PCB_THICKNESS,
+            feetPositions = FEET_POSITIONS),
         caseSection(
             keyPositions = THUMB_GRID,
             keyHeight = 1.25,
