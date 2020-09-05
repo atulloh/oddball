@@ -15,7 +15,8 @@ module rightCase(){
                     PCB_PLATE_OFFSET_Z + 
                     PCB_UNDERSIDE_CLEARANCE + 
                     PCB_THICKNESS,
-                feetPositions = THUMB_FEET_POSITIONS),
+                feetPositions = THUMB_FEET_POSITIONS,
+                boltLength = BOLT_LENGTH),
             caseSection(
                 keyPositions = THUMB_TRACKBALL_GRID,
                 keyHeight = 1.25,
@@ -28,7 +29,8 @@ module rightCase(){
                     PCB_PLATE_OFFSET_Z + 
                     PCB_UNDERSIDE_CLEARANCE + 
                     PCB_THICKNESS - (TRACKBALL_PCB_MOUNT_OFFSET + 9),
-                plateUndersideClearance = TRACKBALL_PCB_MOUNT_OFFSET + 9)]);
+                plateUndersideClearance = TRACKBALL_PCB_MOUNT_OFFSET + 9,
+                boltLength = THUMB_BOLT_LENGTH)]);
 }
 
 rightCase($fn = 100);

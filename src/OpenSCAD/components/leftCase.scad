@@ -14,7 +14,8 @@ module leftCase(){
                 PCB_PLATE_OFFSET_Z + 
                 PCB_UNDERSIDE_CLEARANCE + 
                 PCB_THICKNESS,
-            feetPositions = FEET_POSITIONS),
+            feetPositions = FEET_POSITIONS,
+            boltLength = BOLT_LENGTH),
         caseSection(
             keyPositions = THUMB_GRID,
             keyHeight = 1.25,
@@ -26,7 +27,8 @@ module leftCase(){
             plateUndersideClearance =
                 PCB_PLATE_OFFSET_Z + 
                 PCB_UNDERSIDE_CLEARANCE + 
-                PCB_THICKNESS)]);
+                PCB_THICKNESS,
+            boltLength = BOLT_LENGTH)]);
 }
 
-leftCase($fn = 100);
+leftCase($fn = 10);

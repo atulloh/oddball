@@ -12,7 +12,8 @@ function caseSection(
     plateHull = false,
     caseBottomThickness = 0,
     plateUndersideClearance = 0,
-    feetPositions = []) = [
+    feetPositions = [],
+    boltLength = 0) = [
         keyPositions,
         keyHeight,
         offset,
@@ -21,7 +22,8 @@ function caseSection(
         plateHull,
         caseBottomThickness,
         plateUndersideClearance,
-        feetPositions];
+        feetPositions,
+        boltLength];
 
 module case(sections = []){
 
@@ -33,7 +35,8 @@ module case(sections = []){
         boltPositions,
         plateHull,
         caseBottomThickness,
-        plateUndersideClearance){
+        plateUndersideClearance,
+        boltLength){
             
         big = 500;
         
@@ -92,15 +95,33 @@ module case(sections = []){
         boltPositions,
         plateHull,
         caseBottomThickness,
-        plateUndersideClearance){
+        plateUndersideClearance,
+        boltLength){
 
         big = 10;
+
+        module nutAndBoltChannels(){
+
+            boltOffset =
+                caseBottomThickness +
+                plateUndersideClearance +
+                PLATE_THICKNESS -
+                boltLength;
+
+            for(boltPosition = boltPositions)
+                translate([boltPosition.x, boltPosition.y * keyHeight, 0] * 1U + [PLATE_BEZEL, PLATE_BEZEL, boltOffset]){
+                    cylinder(h = boltOffset, r = BOLT_DIAMETER * 0.5 + BOLT_TOLERENCE);
+                    translate([0,0,-50])
+                        cylinder(h = 50, r = NUT_DIAMETER * 0.5 + NUT_TOLERENCE, $fn = 6);
+                }
+        }
         
         translate([offset.x, offset.y, 0])
             rotate([0,0, rotation.z])
                 translate([0,0, offset.z])
                     rotate([0, rotation.y, 0])
-                        rotate([rotation.x,0,0]){
+                        rotate([rotation.x,0,0]){                           
+                            
                             
                             difference(){
                                 union(){
@@ -124,27 +145,27 @@ module case(sections = []){
                                                     cutHoles = false,
                                                     hull = plateHull);
 
-                                    // nut holes
-                                    for(boltPosition = boltPositions)
-                                        translate([boltPosition.x, boltPosition.y * keyHeight] * 1U + [PLATE_BEZEL, PLATE_BEZEL]){
-                                            cylinder(h = plateUndersideClearance + caseBottomThickness, r = BOLT_DIAMETER * 0.5 + BOLT_TOLERENCE);
-                                            translate([0,0,-50])
-                                                cylinder(h = 50, r = NUT_DIAMETER * 0.5 + NUT_TOLERENCE, $fn = 6);
-                                        }
+                                    nutAndBoltChannels();
                                 }
                                 
-                                for(boltPosition = boltPositions)
-                                    translate([boltPosition.x, boltPosition.y * keyHeight, 0] * 1U + [PLATE_BEZEL, PLATE_BEZEL, caseBottomThickness]){
-                                        
-                                        difference(){
-                                            union(){
-                                                housingRadius = CASE_BOLT_HOUSING_WIDTH + BOLT_DIAMETER * 0.5 + BOLT_TOLERENCE;
-                                                cylinder(h = plateUndersideClearance - 6.5, r1 = housingRadius * 1.5, r2 = housingRadius);
-                                                cylinder(h = plateUndersideClearance, r = CASE_BOLT_HOUSING_WIDTH + BOLT_DIAMETER * 0.5 + BOLT_TOLERENCE);
+                                difference(){
+                                    union(){
+                                        for(boltPosition = boltPositions)
+                                            translate([boltPosition.x, boltPosition.y * keyHeight, 0] * 1U + [PLATE_BEZEL, PLATE_BEZEL, caseBottomThickness]){
+                                                
+                                                difference(){
+                                                    union(){
+                                                        housingRadius = CASE_BOLT_HOUSING_WIDTH + BOLT_DIAMETER * 0.5 + BOLT_TOLERENCE;
+                                                        cylinder(h = plateUndersideClearance - 6.5, r1 = housingRadius * 1.5, r2 = housingRadius);
+                                                        cylinder(h = plateUndersideClearance, r = CASE_BOLT_HOUSING_WIDTH + BOLT_DIAMETER * 0.5 + BOLT_TOLERENCE);
+                                                    }
+                                                    cylinder(h = plateUndersideClearance, r = BOLT_DIAMETER * 0.5 + BOLT_TOLERENCE);
+                                                }
                                             }
-                                            cylinder(h = plateUndersideClearance, r = BOLT_DIAMETER * 0.5 + BOLT_TOLERENCE);
-                                        }
                                     }
+                                    
+                                    nutAndBoltChannels();
+                                }
                             }
                         }
     }
@@ -161,6 +182,7 @@ module case(sections = []){
                         section[4],
                         section[5],
                         section[6],
+                        section[7],
                         section[7]);
             }
 
@@ -180,6 +202,7 @@ module case(sections = []){
                 section[4],
                 section[5],
                 section[6],
+                section[7],
                 section[7]);
 
         // custom cable cutouts; not really parameterised at the moment
@@ -260,7 +283,8 @@ case([
             PCB_PLATE_OFFSET_Z + 
             PCB_UNDERSIDE_CLEARANCE + 
             PCB_THICKNESS,
-        feetPositions = FEET_POSITIONS),
+        feetPositions = FEET_POSITIONS,
+        boltLength = BOLT_LENGTH),
     caseSection(
         keyPositions = THUMB_GRID,
         keyHeight = 1.25,
@@ -272,5 +296,6 @@ case([
         plateUndersideClearance =
             PCB_PLATE_OFFSET_Z + 
             PCB_UNDERSIDE_CLEARANCE + 
-            PCB_THICKNESS)],
+            PCB_THICKNESS,,
+        boltLength = BOLT_LENGTH)],
     $fn = 20);
