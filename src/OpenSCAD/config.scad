@@ -82,8 +82,8 @@ FINGER_BOLT_HOLES =
 THUMB_GRID = [[0, 0], [1, 0.1]];
 
 THUMB_BOLT_HOLES = 
-    [[1, 1],
-     [1, 0.0925]];
+    [[0.95, 0.925],
+     [1.05, 0.175]];
 
 THUMB_TRACKBALL_GRID = [[0, 0], [1.36, 0, "trackball"]];
 
