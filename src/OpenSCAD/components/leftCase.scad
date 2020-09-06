@@ -31,4 +31,4 @@ module leftCase(){
             boltLength = BOLT_LENGTH)]);
 }
 
-leftCase($fn = 10);
+leftCase($fn = 100);
