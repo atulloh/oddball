@@ -37,7 +37,7 @@ module plate(
                                 circle(r = getTrackballHoleRadius());
 
                     else
-                        square([1, keyHeight] * (1U + PLATE_BEZEL * 2));
+                        square([1, keyHeight] * 1U + [1, 1] * PLATE_BEZEL * 2);
     }
 
     difference(){
