@@ -1,5 +1,6 @@
 include <../config.scad>;
 use <./plate.scad>;
+use <./adnsCover.scad>;
 use <./bearingMount.scad>;
 use <./switch.scad>;
 use <./keycap.scad>;
@@ -18,14 +19,11 @@ module keys(
                     translate([0, 0, getTrackballZ()])
                         sphere(d = TRACKBALL_DIAMETER);
                     
-                    translate([0, TRACKBALL_PCB_MOUNT_OFFSET, -STANDOFF_HEIGHT])
-                        cylinder(r = BOLT_DIAMETER, h = STANDOFF_HEIGHT);
-                    
-                    translate([0, -TRACKBALL_PCB_MOUNT_OFFSET, -STANDOFF_HEIGHT])
-                        cylinder(r = BOLT_DIAMETER, h = STANDOFF_HEIGHT);
-
                     translate([0, 0, -STANDOFF_HEIGHT - TRACKBALL_PCB_THICKNESS])
-                        cylinder(d = TRACKBALL_PCB_DIAMETER, h = TRACKBALL_PCB_THICKNESS);
+                        cylinder(d = ADNS_PCB_DIAMETER, h = TRACKBALL_PCB_THICKNESS);
+
+                    translate([0, 0, -STANDOFF_HEIGHT])
+                        adnsCover();
 
                     translate([0,0, PLATE_THICKNESS])
                         bearingMount();

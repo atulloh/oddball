@@ -3,8 +3,8 @@ include <../config.scad>;
 function getTrackballZ() = 
     PLATE_THICKNESS +
     -STANDOFF_HEIGHT +
-    TRACKBALL_LENS_HEIGHT_ABOVE_BOARD +
-    TRACKBALL_LENS_CLEARANCE +
+    ADNS_LENS_HEIGHT_ABOVE_BOARD +
+    ADNS_LENS_CLEARANCE +
     TRACKBALL_DIAMETER * 0.5;
     
 function getTrackballHoleRadius() =
