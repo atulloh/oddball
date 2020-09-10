@@ -2,11 +2,11 @@ include <../config.scad>;
 use <../modules/shapes.scad>;
 use <../modules/plate.scad>;
 
-module adnsCover(){
+module pmwCover(){
     difference(){
         linear_extrude(STANDOFF_HEIGHT)
             difference(){
-                circle(d = ADNS_PCB_DIAMETER);
+                square([PMW_PCB_WIDTH, PMW_PCB_HEIGHT], center = true);
                 
                 // bolts cutouts
 
@@ -36,4 +36,4 @@ module adnsCover(){
     }
 }
 
-adnsCover($fn = 100);
+pmwCover($fn = 100);

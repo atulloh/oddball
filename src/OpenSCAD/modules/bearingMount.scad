@@ -58,10 +58,10 @@ module bearingMount(){
             
         // standoff holes
 
-        translate([0, TRACKBALL_PCB_MOUNT_OFFSET])
+        translate([0, SENSOR_PCB_MOUNT_OFFSET])
             hole();
 
-        translate([0, -TRACKBALL_PCB_MOUNT_OFFSET])
+        translate([0, -SENSOR_PCB_MOUNT_OFFSET])
             hole();
         
     }

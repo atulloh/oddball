@@ -3,8 +3,8 @@ include <../config.scad>;
 function getTrackballZ() = 
     PLATE_THICKNESS +
     -STANDOFF_HEIGHT +
-    ADNS_LENS_HEIGHT_ABOVE_BOARD +
-    ADNS_LENS_CLEARANCE +
+    SENSOR_LENS_HEIGHT_ABOVE_BOARD +
+    SENSOR_LENS_CLEARANCE +
     TRACKBALL_DIAMETER * 0.5;
     
 function getTrackballHoleRadius() =
@@ -31,7 +31,7 @@ module plate(
             for(keyPosition = keyPositions)
                 translate([keyPosition.x, keyPosition.y * keyHeight] * 1U)
 
-                    if(keyPosition.z == "trackball")
+                    if(keyPosition.z == "adns" || keyPosition.z == "pmw")
                         translate([0.5, 0.5 * keyHeight] * 1U + [PLATE_BEZEL,PLATE_BEZEL])
                             offset(r = TRACKBALL_PLATE_BEZEL + (1U - SWITCH_WIDTH) * 0.5)
                                 circle(r = getTrackballHoleRadius());
@@ -60,20 +60,22 @@ module plate(
                 for(keyPosition = keyPositions)
                     translate([keyPosition.x + 0.5, (keyPosition.y + 0.5) * keyHeight] * 1U)
 
-                    if(keyPosition.z == "trackball")
+                    if(keyPosition.z == "adns" || keyPosition.z == "pmw")
                         circle(r = getTrackballHoleRadius());
                     else
                         translate(-[SWITCH_WIDTH, SWITCH_WIDTH] * 0.5)
                             square([SWITCH_WIDTH,SWITCH_WIDTH]);                        
 
-                for(keyPosition = keyPositions)
-                    if(keyPosition.z == "trackball")
-                        translate([keyPosition.x + 0.5, (keyPosition.y + 0.5) * keyHeight] * 1U){
-                            translate([0, TRACKBALL_PCB_MOUNT_OFFSET, 0])
+                for(keyPosition = keyPositions){
+                    translate([keyPosition.x + 0.5, (keyPosition.y + 0.5) * keyHeight] * 1U){
+                        if(keyPosition.z == "adns" || keyPosition.z == "pmw"){
+                            translate([0, SENSOR_PCB_MOUNT_OFFSET, 0])
                                 boltHole();
-                            translate([0, -TRACKBALL_PCB_MOUNT_OFFSET, 0])
+                            translate([0, -SENSOR_PCB_MOUNT_OFFSET, 0])
                                 boltHole();
                         }
+                    }
+                }
 
                 for(boltPosition = boltPositions)
                     translate([boltPosition.x, boltPosition.y * keyHeight] * 1U)

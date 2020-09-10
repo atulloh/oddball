@@ -28,9 +28,9 @@ module rightCase(){
                     CASE_BOTTOM_THICKNESS +
                     PCB_PLATE_OFFSET_Z + 
                     PCB_UNDERSIDE_CLEARANCE + 
-                    PCB_THICKNESS - (TRACKBALL_PCB_MOUNT_OFFSET + 9),
-                plateUndersideClearance = TRACKBALL_PCB_MOUNT_OFFSET + 9,
+                    PCB_THICKNESS - (SENSOR_PCB_MOUNT_OFFSET + 9),
+                plateUndersideClearance = SENSOR_PCB_MOUNT_OFFSET + 9,
                 boltLength = THUMB_BOLT_LENGTH)]);
 }
 
-rightCase($fn = 100);
+rightCase($fn = 10);

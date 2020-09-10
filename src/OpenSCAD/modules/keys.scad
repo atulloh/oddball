@@ -1,6 +1,7 @@
 include <../config.scad>;
 use <./plate.scad>;
 use <./adnsCover.scad>;
+use <./pmwCover.scad>;
 use <./bearingMount.scad>;
 use <./switch.scad>;
 use <./keycap.scad>;
@@ -13,20 +14,33 @@ module keys(
     for(keyPosition = keyPositions)
         translate([keyPosition.x, keyPosition.y * keyHeight] * 1U + [PLATE_BEZEL,PLATE_BEZEL])
         
-            if(keyPosition.z == "trackball")
+            if(keyPosition.z == "adns" || keyPosition.z == "pmw")
                 translate([0.5, 0.5 * keyHeight, 0] * 1U){
                     
+                    // trackball
                     translate([0, 0, getTrackballZ()])
                         sphere(d = TRACKBALL_DIAMETER);
-                    
-                    translate([0, 0, -STANDOFF_HEIGHT - TRACKBALL_PCB_THICKNESS])
-                        cylinder(d = ADNS_PCB_DIAMETER, h = TRACKBALL_PCB_THICKNESS);
-
-                    translate([0, 0, -STANDOFF_HEIGHT])
-                        adnsCover();
-
+                        
+                    // trackball mount
                     translate([0,0, PLATE_THICKNESS])
                         bearingMount();
+
+                    // sensor cover                    
+                    translate([0, 0, -STANDOFF_HEIGHT]){
+                        if(keyPosition.z == "adns")
+                            adnsCover();
+                        else
+                            pmwCover();
+                    }
+
+                    // sensor
+                    translate([0, 0, -STANDOFF_HEIGHT - SENSOR_PCB_THICKNESS]){
+                        if(keyPosition.z == "adns")
+                            cylinder(d = TRACKBALL_BOLT_HOLES_DIAMETER, h = SENSOR_PCB_THICKNESS);
+                        else
+                            translate([0, 0, SENSOR_PCB_THICKNESS * 0.5])
+                                cube([PMW_PCB_WIDTH, PMW_PCB_HEIGHT, SENSOR_PCB_THICKNESS], center = true);
+                    }                            
                 }
 
             else
