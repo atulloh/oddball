@@ -3,18 +3,30 @@ use <../modules/shapes.scad>;
 use <../modules/plate.scad>;
 
 module pmwCover(){
+
+    module boltHoles(){
+
+        boltCutout = BOLT_DIAMETER + BOLT_TOLERENCE * 2;
+        cutoutLength = SENSOR_PCB_MOUNT_OFFSET - PMW_PCB_MOUNT_OFFSET;
+
+        translate([0, PMW_PCB_MOUNT_OFFSET + cutoutLength / 2])
+            squircle([cutoutLength, boltCutout], boltCutout, true);
+
+        translate([0, -PMW_PCB_MOUNT_OFFSET - cutoutLength / 2])
+            squircle([cutoutLength, boltCutout], boltCutout, true);
+    }
+
     difference(){
         linear_extrude(STANDOFF_HEIGHT)
             difference(){
-                square([PMW_PCB_WIDTH, PMW_PCB_HEIGHT], center = true);
-                
-                // bolts cutouts
 
-                translate([0, SENSOR_PCB_MOUNT_OFFSET])
-                    circle(d = BOLT_DIAMETER + BOLT_TOLERENCE * 2);
+                union(){
+                    square([PMW_PCB_WIDTH, PMW_PCB_HEIGHT], center = true);
+                    offset(2)
+                        boltHoles();
+                }
 
-                translate([0, -SENSOR_PCB_MOUNT_OFFSET])
-                    circle(d = BOLT_DIAMETER + BOLT_TOLERENCE * 2);
+                boltHoles();
 
                 // laser channel
                 squircle(
