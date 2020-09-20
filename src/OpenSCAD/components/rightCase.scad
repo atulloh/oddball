@@ -33,4 +33,4 @@ module rightCase(){
                 boltLength = THUMB_BOLT_LENGTH)]);
 }
 
-rightCase($fn = 10);
+rightCase($fn = 100);
