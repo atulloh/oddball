@@ -1,6 +1,7 @@
 include <../config.scad>;
 use <./shapes.scad>;
 use <./plate.scad>;
+use <./pcb.scad>;
 use <./keys.scad>;
 
 function caseSection(
@@ -79,11 +80,18 @@ module case(sections = []){
                     %translate([0,0, offset.z])
                         rotate([0,rotation.y,0])
                             rotate([rotation.x,0,0])
-                                    translate([0, 0, plateUndersideClearance + caseBottomThickness]){
-                                            keys(keyPositions,keyHeight, $fn = 20);
-                                            linear_extrude(PLATE_THICKNESS)
-                                                plate(keyPositions, keyHeight, boltPositions, hull = plateHull, $fn = 20);
-                                        }
+                                translate([0, 0, plateUndersideClearance + caseBottomThickness]){
+                                    keys(keyPositions,keyHeight, $fn = 20);
+                                    linear_extrude(PLATE_THICKNESS)
+                                        plate(keyPositions, keyHeight, boltPositions, hull = plateHull, $fn = 20);
+
+                                    translate([0,0, -PCB_PLATE_OFFSET_Z - PCB_THICKNESS])
+                                        linear_extrude(PCB_THICKNESS)
+                                            pcb(
+                                                keyPositions = keyPositions,
+                                                boltPositions = boltPositions,
+                                                keyHeight = keyHeight);
+                                }
             }
     }
 
@@ -216,11 +224,12 @@ module case(sections = []){
                             rotate([90,0,0])
                                 linear_extrude(10)
                                     squircle([14,6], radius = 1);
-
-                        // microcontroller
-                        usbInnerHoleSize = [8, 6, 0];
+                                    
+                        // usb cable
+                        usbClearance = 1;
+                        usbInnerHoleSize = [USB_C_SIZE.x, USB_C_SIZE.z, 0] + [usbClearance, usbClearance, 0];
                         usbOuterHoleSize = usbInnerHoleSize + [3,3,0];
-                        translate([PLATE_BEZEL + 3.5 * 1U, 75, 2])
+                        translate([PLATE_BEZEL + 3.5 * 1U, 75, 4])
                             rotate([90,0,0]){
 
                                 // outer hole
