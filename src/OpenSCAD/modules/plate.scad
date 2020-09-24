@@ -33,7 +33,7 @@ module plate(
 
                     if(keyPosition.z == "adns" || keyPosition.z == "pmw")
                         translate([0.5, 0.5 * keyHeight] * 1U + [PLATE_BEZEL,PLATE_BEZEL])
-                            offset(r = TRACKBALL_PLATE_BEZEL + (1U - SWITCH_WIDTH) * 0.5)
+                            offset(delta = TRACKBALL_PLATE_BEZEL)
                                 circle(r = getTrackballHoleRadius());
 
                     else
