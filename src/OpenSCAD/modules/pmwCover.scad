@@ -7,13 +7,13 @@ module pmwCover(){
     module boltHoles(){
 
         boltCutout = BOLT_DIAMETER + BOLT_TOLERENCE * 2;
-        cutoutLength = SENSOR_PCB_MOUNT_OFFSET - PMW_PCB_MOUNT_OFFSET;
+        cutoutLength = SENSOR_PCB_MOUNT_OFFSET - PMW_PCB_MOUNT_OFFSET + boltCutout;
 
-        translate([0, PMW_PCB_MOUNT_OFFSET + cutoutLength / 2])
-            squircle([cutoutLength, boltCutout], boltCutout, true);
+        translate([0, PMW_PCB_MOUNT_OFFSET + (cutoutLength - boltCutout ) / 2])
+            squircle([boltCutout, cutoutLength], boltCutout, true);
 
-        translate([0, -PMW_PCB_MOUNT_OFFSET - cutoutLength / 2])
-            squircle([cutoutLength, boltCutout], boltCutout, true);
+        translate([0, -PMW_PCB_MOUNT_OFFSET - (cutoutLength - boltCutout) / 2])
+            squircle([boltCutout, cutoutLength], boltCutout, true);
     }
 
     difference(){
@@ -22,7 +22,7 @@ module pmwCover(){
 
                 union(){
                     square([PMW_PCB_WIDTH, PMW_PCB_HEIGHT], center = true);
-                    offset(2)
+                    offset(1.5)
                         boltHoles();
                 }
 
