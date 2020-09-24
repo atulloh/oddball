@@ -145,13 +145,23 @@ module case(sections = []){
                                     
                                     // cutout under plate
                                     translate([0,0, caseBottomThickness])
-                                        linear_extrude(plateUndersideClearance)
+                                        linear_extrude(plateUndersideClearance){
+
                                             offset(delta = -CASE_PLATE_MOUNT_COVERAGE)
                                                 plate(
                                                     keyPositions,
                                                     keyHeight,
                                                     cutHoles = false,
                                                     hull = plateHull);
+                                            
+                                            // extra cutout for PMW
+                                            for(keyPosition = keyPositions){
+                                                if(keyPosition.z == "pmw")
+                                                    translate([keyPosition.x + 0.5, (keyPosition.y + 0.5) * keyHeight] * 1U + [PLATE_BEZEL, PLATE_BEZEL])
+                                                        offset(delta = CASE_PLATE_TOLERENCE)
+                                                            square([PMW_PCB_WIDTH, PMW_PCB_HEIGHT], center = true);
+                                            }
+                                        }
 
                                     nutAndBoltChannels();
                                 }
