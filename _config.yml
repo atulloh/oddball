@@ -1,5 +1,5 @@
-theme: jekyll-theme-slate
 title: Oddball
+remote_theme: pmarsceill/just-the-docs
 defaults:
   - scope:
       path: "assets/images"
