@@ -1,5 +1,9 @@
 title: Oddball
 remote_theme: pmarsceill/just-the-docs
+aux_links:
+  "Oddball on GitHub":
+    - "//github.com/atulloh/oddball"
+
 defaults:
   - scope:
       path: "assets/images"

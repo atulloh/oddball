@@ -1,6 +1,8 @@
 ---
-comments: true
+title: Build Log
+parent: v2
 ---
+
 
 <style>
     figure {
@@ -14,7 +16,7 @@ comments: true
     }
 </style>
 
-# Oddball v2: Build Log
+# v2 Build Log
 
 <figure>
   <img src="{{site.baseurl}}/assets/images/todo.jpg" alt="Assembled"/>

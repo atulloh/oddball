@@ -1,20 +1,9 @@
 ---
-comments: true
+title: Build Log
+parent: v1
 ---
 
-<style>
-    figure {
-        text-align: center;
-        font-style: italic;
-        font-size: 15px;
-        padding-bottom: 30px;
-    }
-    figure > img {
-      margin-bottom: 0;
-    }
-</style>
-
-# Oddball v1: Build Log
+# v1 Build Log
 
 <figure>
   <img src="{{site.baseurl}}/assets/images/assembled.jpg" alt="Assembled"/>
@@ -215,7 +204,7 @@ For manufacturing, I ended up going with [JLCPCB](http://jlcpcb.com/), a Chinese
   <figcaption>And again, the (nearly) final product!</figcaption>
 </figure>
 
-## Finial thoughts
+## Final thoughts
 
 ### (TODO: take a nice picture for y'all!)
 
