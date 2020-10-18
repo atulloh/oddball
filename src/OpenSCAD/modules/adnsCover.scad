@@ -36,4 +36,5 @@ module adnsCover(){
     }
 }
 
-adnsCover($fn = 100);
+rotate([180,0,0])
+    adnsCover($fn = 100);
