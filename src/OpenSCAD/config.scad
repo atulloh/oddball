@@ -35,12 +35,12 @@ TRACKBALL_PLATE_BEZEL = 7;
 
 // common sensor
 
-SENSOR_CHANNEL_WIDTH = 12; // TODO: measure
-SENSOR_CHANNEL_HEIGHT = 15; // TODO: measure
-SENSOR_LENS_CLEARANCE = 2.4; // from ADNS9800/PMW3600 data sheets
-SENSOR_LENS_HEIGHT_ABOVE_BOARD = 1.5;// TODO: measure
-SENSOR_LENS_WIDTH = 21; // TODO: measure
-SENSOR_LENS_HEIGHT = 22; // TODO: measure
+SENSOR_CHANNEL_WIDTH = 12;
+SENSOR_CHANNEL_HEIGHT = 15;
+SENSOR_LENS_CLEARANCE = 1.9; // 2.4 from ADNS9800/PMW3600 data sheets, but needed a slight reduction, probably due to print tolerences
+SENSOR_LENS_HEIGHT_ABOVE_BOARD = 3.5;
+SENSOR_LENS_WIDTH = 21; 
+SENSOR_LENS_HEIGHT = 22;
 SENSOR_PCB_MOUNT_OFFSET = 13.5; // distance in X/Y from centre
 SENSOR_PCB_THICKNESS = 1.5;
 STANDOFF_HEIGHT = 9.5;
@@ -109,7 +109,7 @@ THUMB_BOLT_HOLES =
     [[0.95, 0.925],
      [1.05, 0.175]];
 
-THUMB_TRACKBALL_GRID = [[0, 0], [1.43, 0, "pmw"]];
+THUMB_TRACKBALL_GRID = [[0, 0], [1.43, 0, "pmw" /* "adns" */ ]];
 
 THUMB_TRACKBALL_BOLT_HOLES = 
     [[0.95, 0.925],

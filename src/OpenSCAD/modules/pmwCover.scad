@@ -36,16 +36,17 @@ module pmwCover(){
             }
         
         // cutout for sensor
-        linear_extrude(SENSOR_LENS_HEIGHT_ABOVE_BOARD + 1)
+        linear_extrude(SENSOR_LENS_HEIGHT_ABOVE_BOARD)
             squircle(
                 size = [SENSOR_LENS_WIDTH, SENSOR_LENS_HEIGHT],
                 radius = 4,
                 center = true);
                 
         // cutout for trackball
-        translate([0, 0, getTrackballZ() + STANDOFF_HEIGHT + PLATE_THICKNESS - 1])
+        translate([0, 0, getTrackballZ() + STANDOFF_HEIGHT])
             sphere(d = TRACKBALL_DIAMETER);
     }
 }
 
-pmwCover($fn = 100);
+rotate([180,0,0])
+    pmwCover($fn = 100);

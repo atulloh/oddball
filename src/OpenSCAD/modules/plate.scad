@@ -1,7 +1,6 @@
 include <../config.scad>;
 
 function getTrackballZ() = 
-    PLATE_THICKNESS +
     -STANDOFF_HEIGHT +
     SENSOR_LENS_HEIGHT_ABOVE_BOARD +
     SENSOR_LENS_CLEARANCE +

@@ -24,16 +24,29 @@ module adnsCover(){
             }
         
         // cutout for sensor
-        linear_extrude(SENSOR_LENS_HEIGHT_ABOVE_BOARD + 1)
+        linear_extrude(SENSOR_LENS_HEIGHT_ABOVE_BOARD)
             squircle(
                 size = [SENSOR_LENS_WIDTH, SENSOR_LENS_HEIGHT],
                 radius = 4,
                 center = true);
                 
+        // cutout to expose bottom rings
+        linear_extrude(1)
+            difference(){
+                circle(d = ADNS_PCB_DIAMETER);
+
+                translate([0, SENSOR_PCB_MOUNT_OFFSET])
+                    circle(d = BOLT_DIAMETER + BOLT_TOLERENCE * 2 + 2);
+
+                translate([0, -SENSOR_PCB_MOUNT_OFFSET])
+                    circle(d = BOLT_DIAMETER + BOLT_TOLERENCE * 2 + 2);
+            }
+            
         // cutout for trackball
-        translate([0, 0, getTrackballZ() + STANDOFF_HEIGHT + PLATE_THICKNESS - 1])
-            sphere(d = TRACKBALL_DIAMETER);
+        translate([0, 0, getTrackballZ() + STANDOFF_HEIGHT])
+            sphere(d = TRACKBALL_DIAMETER + 1);
     }
+    
 }
 
 rotate([180,0,0])
