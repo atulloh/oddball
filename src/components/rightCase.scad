@@ -1,7 +1,7 @@
 include <../config.scad>;
 use <../modules/case.scad>;
 
-module leftCase(){
+mirror([1,0,0])
     case([
         caseSection(
             keyPositions = FINGER_GRID,
@@ -14,21 +14,20 @@ module leftCase(){
                 PCB_PLATE_OFFSET_Z + 
                 PCB_UNDERSIDE_CLEARANCE + 
                 PCB_THICKNESS,
-            feetPositions = FEET_POSITIONS,
+            feetPositions = THUMB_FEET_POSITIONS,
             boltLength = BOLT_LENGTH),
         caseSection(
-            keyPositions = THUMB_GRID,
+            keyPositions = THUMB_TRACKBALL_GRID,
             keyHeight = 1.25,
             offset = THUMB_OFFSET,
             rotation = THUMB_ROTATION,
-            boltPositions = THUMB_BOLT_HOLES,
-            plateHull = false,
-            caseBottomThickness = CASE_BOTTOM_THICKNESS,
-            plateUndersideClearance =
+            boltPositions = THUMB_TRACKBALL_BOLT_HOLES,
+            plateHull = true,
+            caseBottomThickness = 
+                CASE_BOTTOM_THICKNESS +
                 PCB_PLATE_OFFSET_Z + 
                 PCB_UNDERSIDE_CLEARANCE + 
-                PCB_THICKNESS,
-            boltLength = BOLT_LENGTH)]);
-}
-
-leftCase($fn = 100);
+                PCB_THICKNESS - (SENSOR_PCB_MOUNT_OFFSET + 9),
+            plateUndersideClearance = SENSOR_PCB_MOUNT_OFFSET + 9,
+            boltLength = THUMB_BOLT_LENGTH)],
+        $fn = 100);

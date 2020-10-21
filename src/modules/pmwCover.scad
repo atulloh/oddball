@@ -48,5 +48,4 @@ module pmwCover(){
     }
 }
 
-rotate([180,0,0])
-    pmwCover($fn = 100);
+pmwCover($fn = 20);

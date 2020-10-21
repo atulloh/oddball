@@ -45,9 +45,7 @@ module adnsCover(){
         // cutout for trackball
         translate([0, 0, getTrackballZ() + STANDOFF_HEIGHT])
             sphere(d = TRACKBALL_DIAMETER + 1);
-    }
-    
+    }    
 }
 
-rotate([180,0,0])
-    adnsCover($fn = 100);
+adnsCover($fn = 20);
