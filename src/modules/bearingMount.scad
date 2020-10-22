@@ -67,4 +67,4 @@ module bearingMount(){
     }
 }
 
-bearingMount($fn = 100);
+bearingMount($fn = 20);
