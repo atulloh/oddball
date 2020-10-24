@@ -272,7 +272,7 @@ module case(sections = []){
                         
                         // reset button
                         resetHoleSize = 1.0;
-                        translate([PLATE_BEZEL + 1.9 * 1U, 68, 4])
+                        translate([PLATE_BEZEL + 37.2, 68, 6])
                             rotate([90,0,0]){
                                 translate([0,0,0])
                                     linear_extrude(10)
