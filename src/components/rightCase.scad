@@ -14,7 +14,6 @@ mirror([1,0,0])
                 PCB_PLATE_OFFSET_Z + 
                 PCB_UNDERSIDE_CLEARANCE + 
                 PCB_THICKNESS,
-            feetPositions = THUMB_FEET_POSITIONS,
             boltLength = BOLT_LENGTH),
         caseSection(
             keyPositions = THUMB_TRACKBALL_GRID,
@@ -30,4 +29,7 @@ mirror([1,0,0])
                 PCB_THICKNESS - (SENSOR_PCB_MOUNT_OFFSET + 9),
             plateUndersideClearance = SENSOR_PCB_MOUNT_OFFSET + 9,
             boltLength = THUMB_BOLT_LENGTH)],
+        usbCutoutPosition = [PLATE_BEZEL + 3.5 * 1U, 66, 4.5],
+        trrsCutoutPosition = [PLATE_BEZEL + 5 * 1U + 1.5, 60, 5.5],
+        feetPositions = FEET_POSITIONS,
         $fn = 100);

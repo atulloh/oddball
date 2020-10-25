@@ -13,7 +13,6 @@ case([
             PCB_PLATE_OFFSET_Z + 
             PCB_UNDERSIDE_CLEARANCE + 
             PCB_THICKNESS,
-        feetPositions = FEET_POSITIONS,
         boltLength = BOLT_LENGTH),
     caseSection(
         keyPositions = THUMB_GRID,
@@ -28,4 +27,7 @@ case([
             PCB_UNDERSIDE_CLEARANCE + 
             PCB_THICKNESS,
         boltLength = BOLT_LENGTH)],
+    usbCutoutPosition = [PLATE_BEZEL + 3.5 * 1U, 66, 4],
+    trrsCutoutPosition = [PLATE_BEZEL + 5 * 1U - 1.5, 60, 5.5],
+    feetPositions = FEET_POSITIONS,
     $fn = 100);

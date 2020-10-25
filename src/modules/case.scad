@@ -13,7 +13,6 @@ function caseSection(
     plateHull = false,
     caseBottomThickness = 0,
     plateUndersideClearance = 0,
-    feetPositions = [],
     boltLength = 0) = [
         keyPositions,
         keyHeight,
@@ -23,10 +22,13 @@ function caseSection(
         plateHull,
         caseBottomThickness,
         plateUndersideClearance,
-        feetPositions,
         boltLength];
 
-module case(sections = []){
+module case(
+    sections = [],
+    usbCutoutPosition,
+    trrsCutoutPosition,
+    feetPositions = []){
 
     module caseOutline(
         keyPositions,
@@ -201,7 +203,7 @@ module case(sections = []){
                         section[5],
                         section[6],
                         section[7],
-                        section[7]);
+                        section[8]);
             }
 
             difference(){        
@@ -221,7 +223,7 @@ module case(sections = []){
                 section[5],
                 section[6],
                 section[7],
-                section[7]);
+                section[8]);
 
         // custom cable cutouts; not really parameterised at the moment
         rotate([0,0, HAND_ROTATION.z]){
@@ -229,45 +231,45 @@ module case(sections = []){
                 rotate([HAND_ROTATION.x,0,0])
                     translate([0,0, CASE_BOTTOM_THICKNESS]){
                         
+                        cutoutMuch = 10;
+
                         // thumb cluster channel
                         translate([89,8,0])
                             rotate([90,0,0])
-                                linear_extrude(10)
+                                linear_extrude(cutoutMuch)
                                     squircle([14,6], radius = 1);
                                     
                         // usb cable
-                        usbClearance = 1;
-                        usbInnerHoleSize = [USB_C_SIZE.x, USB_C_SIZE.z, 0] + [usbClearance, usbClearance, 0];
-                        usbOuterHoleSize = usbInnerHoleSize + [3,3,0];
-                        translate([PLATE_BEZEL + 3.5 * 1U, 75, 4])
+                        usbInnerHoleSize = [USB_C_SIZE.x, USB_C_SIZE.z, 0] + [USB_C_CUTOUT_TOLERENCE, USB_C_CUTOUT_TOLERENCE, 0];
+                        usbOuterHoleSize = usbInnerHoleSize + [USB_C_CUTOUT_OUTER_DELTA, USB_C_CUTOUT_OUTER_DELTA, 0];
+
+                        translate(usbCutoutPosition)
                             rotate([90,0,0]){
 
                                 // outer hole
-                                translate([0,0,-1.5] - usbOuterHoleSize * 0.5)
-                                    linear_extrude(10)
-                                        squircle(usbOuterHoleSize, radius = 0.5);
+                                translate([0,0,-cutoutMuch])
+                                    linear_extrude(cutoutMuch)
+                                        offset(delta = USB_C_CUTOUT_OUTER_DELTA)
+                                            squircle(usbInnerHoleSize, radius = 2, center = true);
 
                                 // inner hole
-                                translate([0,0,8]-usbInnerHoleSize * 0.5)
-                                    linear_extrude(10)
-                                        squircle(usbInnerHoleSize, radius = 0.5);
+                                linear_extrude(cutoutMuch)
+                                    squircle(usbInnerHoleSize, radius = 2, center = true);
                             }
-                        
+                            
                         // trrs
-                        trrsInnerHoleSize = 2.75;
                         trrsOuterHoleSize = 5.5;
-                        translate([PLATE_BEZEL + 5.3 * 1U, 70, 3])
+                        translate(trrsCutoutPosition)
                             rotate([90,0,0]){
 
                                 // outer hole
-                                translate([0,0,-1.5])
-                                    linear_extrude(10)
-                                        circle(r = trrsOuterHoleSize);
+                                translate([0,0,-cutoutMuch])
+                                    linear_extrude(cutoutMuch)
+                                        circle(d = TRRS_CUTOUT_SIZE + TRRS_CUTOUT_OUTER_DELTA);
 
                                 // inner hole
-                                translate([0,0,0])
-                                    linear_extrude(10)
-                                        circle(r = trrsInnerHoleSize);
+                                linear_extrude(cutoutMuch)
+                                    circle(d = TRRS_CUTOUT_SIZE);
                             }
                         
                         // reset button
@@ -283,7 +285,7 @@ module case(sections = []){
 
             // feet cutouts
             linear_extrude(FEET_HEIGHT)
-                for(foot = sections[0][8]) // TODO: code smell just pulling first feet set
+                for(foot = feetPositions)
                     translate(foot * 1U)
                         circle(d = FEET_DIAMETER + FEET_TOLERENCE);
         }
@@ -302,7 +304,6 @@ case([
             PCB_PLATE_OFFSET_Z + 
             PCB_UNDERSIDE_CLEARANCE + 
             PCB_THICKNESS,
-        feetPositions = FEET_POSITIONS,
         boltLength = BOLT_LENGTH),
     caseSection(
         keyPositions = THUMB_GRID,
@@ -317,4 +318,7 @@ case([
             PCB_UNDERSIDE_CLEARANCE + 
             PCB_THICKNESS,,
         boltLength = BOLT_LENGTH)],
+    usbCutoutPosition = [PLATE_BEZEL + 3.5 * 1U, 66, 4],
+    trrsCutoutPosition = [PLATE_BEZEL + 5 * 1U, 60, 5.5],
+    feetPositions = FEET_POSITIONS,
     $fn = 20);

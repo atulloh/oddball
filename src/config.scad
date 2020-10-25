@@ -1,6 +1,6 @@
 // draw flags
 
-DRAW_DEBUG = true;
+DRAW_DEBUG = false;
 
 // MX constants
 
@@ -74,7 +74,6 @@ PCB_CASE_CLEARANCE = 1;
 PCB_SWITCH_OFFSET = 0;
 
 PRO_MICRO_SIZE = [17.8, 33];
-USB_C_SIZE = [8.98, 9.20, 3.28];
 PRO_MICRO_USB_OVERHANG = 2; // TODO: measure
 
 // case
@@ -128,3 +127,12 @@ THUMB_FEET_POSITIONS =
 HAND_ROTATION = [0, -12, 0];
 THUMB_ROTATION = [10, -2, -10.25];
 THUMB_OFFSET = [80.5, -22, 13.5];
+
+// cutouts
+
+USB_C_SIZE = [8.98, 9.20, 3.28];
+USB_C_CUTOUT_TOLERENCE = 0.5;
+USB_C_CUTOUT_OUTER_DELTA = 1.5;
+
+TRRS_CUTOUT_SIZE = 5.5;
+TRRS_CUTOUT_OUTER_DELTA = 5.5;
