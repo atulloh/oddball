@@ -29,7 +29,7 @@ module leftCase(){
                 PCB_THICKNESS,
             boltLength = BOLT_LENGTH)],
         usbCutoutPosition = [PLATE_BEZEL + 3.5 * 1U, 66, 4],
-        trrsCutoutPosition = [PLATE_BEZEL + 5 * 1U + 1, 60, 5],
+        trrsCutoutPosition = [PLATE_BEZEL + 5 * 1U + 0.5, 60, 4.5],
         feetPositions = FEET_POSITIONS);
 }
 

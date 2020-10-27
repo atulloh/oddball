@@ -31,7 +31,7 @@ module rightCase(){
                 plateUndersideClearance = SENSOR_PCB_MOUNT_OFFSET + 9,
                 boltLength = THUMB_BOLT_LENGTH)],
             usbCutoutPosition = [PLATE_BEZEL + 3.5 * 1U, 66, 4.5],
-            trrsCutoutPosition = [PLATE_BEZEL + 5 * 1U - 2, 60, 5],
+            trrsCutoutPosition = [PLATE_BEZEL + 5 * 1U - 2.5, 60, 4.5],
             feetPositions = FEET_POSITIONS);
 }
 
