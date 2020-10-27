@@ -234,7 +234,7 @@ module case(
                         cutoutMuch = 10;
 
                         // thumb cluster channel
-                        translate([89,8,0])
+                        translate([87.5,9.2,0])
                             rotate([90,0,0])
                                 linear_extrude(cutoutMuch)
                                     squircle([14,6], radius = 1);
