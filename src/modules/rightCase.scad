@@ -32,7 +32,7 @@ module rightCase(){
                 boltLength = THUMB_BOLT_LENGTH)],
             usbCutoutPosition = [PLATE_BEZEL + 3.5 * 1U, 66, 4.5],
             trrsCutoutPosition = [PLATE_BEZEL + 5 * 1U - 2.5, 60, 4.5],
-            feetPositions = FEET_POSITIONS);
+            feetPositions = THUMB_FEET_POSITIONS);
 }
 
 rightCase($fn = 20);
