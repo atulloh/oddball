@@ -176,7 +176,7 @@ module case(
                                                 difference(){
                                                     union(){
                                                         housingRadius = CASE_BOLT_HOUSING_WIDTH + BOLT_DIAMETER * 0.5 + BOLT_TOLERENCE;
-                                                        cylinder(h = plateUndersideClearance - 6.5, r1 = housingRadius * 1.5, r2 = housingRadius);
+                                                        cylinder(h = plateUndersideClearance - 10, r1 = housingRadius * 1.5, r2 = housingRadius);
                                                         cylinder(h = plateUndersideClearance, r = CASE_BOLT_HOUSING_WIDTH + BOLT_DIAMETER * 0.5 + BOLT_TOLERENCE);
                                                     }
                                                     cylinder(h = plateUndersideClearance, r = BOLT_DIAMETER * 0.5 + BOLT_TOLERENCE);
@@ -238,6 +238,12 @@ module case(
                             rotate([90,0,0])
                                 linear_extrude(cutoutMuch)
                                     squircle([14,6], radius = 1);
+
+                        // extra for IC
+                        translate([usbCutoutPosition.x, usbCutoutPosition.y - 3.3, 0])
+                            linear_extrude(sections[0][7])
+                                square([1U + PLATE_BEZEL * 2 + 0.5, 5], center = true);
+                        
                                     
                         // usb cable
                         usbInnerHoleSize = [USB_C_SIZE.x, USB_C_SIZE.z, 0] + [USB_C_CUTOUT_TOLERENCE, USB_C_CUTOUT_TOLERENCE, 0];
