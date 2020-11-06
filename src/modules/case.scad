@@ -67,7 +67,7 @@ module case(
                                     }
                     
                     // big cube to cut off top of extrusion
-                    translate([0,0, offset.z])
+                    translate([0,0, offset.z + CASE_HEIGHT_ABOVE_PLATE])
                         rotate([0,rotation.y,0])
                             rotate([rotation.x,0,0])
                                 translate([
