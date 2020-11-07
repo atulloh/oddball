@@ -322,7 +322,7 @@ case([
         plateUndersideClearance =
             PCB_PLATE_OFFSET_Z + 
             PCB_UNDERSIDE_CLEARANCE + 
-            PCB_THICKNESS,,
+            PCB_THICKNESS,
         boltLength = BOLT_LENGTH)],
     usbCutoutPosition = [PLATE_BEZEL + 3.5 * 1U, 66, 6],
     trrsCutoutPosition = [PLATE_BEZEL + 5 * 1U + 0.5, 60, 4.5],
