@@ -33,7 +33,7 @@ module rightCase(){
             usbCutoutPosition = [
                 PLATE_BEZEL + 3.5 * 1U, 
                 66,
-                PCB_UNDERSIDE_CLEARANCE - MCU_PCB_OFFSET - PCB_THICKNESS - USB_C_SIZE.z / 2],
+                PCB_UNDERSIDE_CLEARANCE - MCU_PCB_OFFSET - MCU_PCB_THICKNESS - USB_C_SIZE.z / 2],
             trrsCutoutPosition = [
                 PLATE_BEZEL + 5 * 1U - 2.5, 
                 60, 
