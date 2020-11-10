@@ -129,9 +129,9 @@ THUMB_FEET_POSITIONS =
 
 // plane rotations
 
-HAND_ROTATION = [0, -8.5, 0];
+HAND_ROTATION = [5, -8.5, 0];
 THUMB_ROTATION = [10, -2, -10.25];
-THUMB_OFFSET = [80.5, -20.5, 8.1];
+THUMB_OFFSET = [80.5, -21.5, 8.5];
 
 // cutouts
 
