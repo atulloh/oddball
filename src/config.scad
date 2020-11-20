@@ -77,7 +77,7 @@ PCB_SWITCH_OFFSET = 0;
 PRO_MICRO_SIZE = [17.8, 33];
 PRO_MICRO_USB_OVERHANG = 2; // TODO: measure
 
-MCU_PCB_OFFSET = 3; // socket or header height
+MCU_PCB_OFFSET = 3.5; // socket or header height
 MCU_PCB_THICKNESS = 1; // Elite C
 
 // case
