@@ -125,7 +125,7 @@ module case(
                 translate([boltPosition.x, boltPosition.y * keyHeight, 0] * 1U + [PLATE_BEZEL, PLATE_BEZEL, boltOffset]){
                     cylinder(h = boltLength, r = BOLT_DIAMETER * 0.5 + BOLT_TOLERENCE);
                     translate([0,0,-big])
-                        cylinder(h = big, r = NUT_DIAMETER * 0.5 + NUT_TOLERENCE, $fn = 6);
+                        cylinder(h = big + NUT_HEIGHT, r = NUT_DIAMETER * 0.5 + NUT_TOLERENCE, $fn = 6);
                 }
         }
         

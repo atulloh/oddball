@@ -1,6 +1,6 @@
 // draw flags
 
-DRAW_DEBUG = true;
+DRAW_DEBUG = false;
 
 // MX constants
 
@@ -16,7 +16,7 @@ BOLT_DIAMETER = 2.4; // M2 cleanance
 BOLT_TOLERENCE = 0.1;
 BOLT_TOP_DIAMETER = 3.8; // TODO: measure
 BOLT_LENGTH = 16;
-THUMB_BOLT_LENGTH = 16;
+THUMB_BOLT_LENGTH = 20;
 
 BEARING_DIAMETER = 3.175;
 
