@@ -93,7 +93,7 @@ CASE_STANDOFF_FLANGED = true;
 
 // case feet cutouts
 
-FEET_DIAMETER = 15;
+FEET_DIAMETER = 8;
 FEET_TOLERENCE = 1.25;
 FEET_HEIGHT = 1;
 
