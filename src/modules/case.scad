@@ -13,7 +13,8 @@ function caseSection(
     plateHull = false,
     caseBottomThickness = 0,
     plateUndersideClearance = 0,
-    boltLength = 0) = [
+    boltLength = 0,
+    flangeStandoffs = false) = [
         keyPositions,
         keyHeight,
         offset,
@@ -22,7 +23,8 @@ function caseSection(
         plateHull,
         caseBottomThickness,
         plateUndersideClearance,
-        boltLength];
+        boltLength,
+        flangeStandoffs];
 
 module case(
     sections = [],
@@ -106,9 +108,10 @@ module case(
         plateHull,
         caseBottomThickness,
         plateUndersideClearance,
-        boltLength){
+        boltLength,
+        flangeStandoffs){
 
-        big = 10;
+        big = 100;
 
         module nutAndBoltChannels(){
 
@@ -120,9 +123,9 @@ module case(
 
             for(boltPosition = boltPositions)
                 translate([boltPosition.x, boltPosition.y * keyHeight, 0] * 1U + [PLATE_BEZEL, PLATE_BEZEL, boltOffset]){
-                    cylinder(h = boltOffset, r = BOLT_DIAMETER * 0.5 + BOLT_TOLERENCE);
-                    translate([0,0,-50])
-                        cylinder(h = 50, r = NUT_DIAMETER * 0.5 + NUT_TOLERENCE, $fn = 6);
+                    cylinder(h = boltLength, r = BOLT_DIAMETER * 0.5 + BOLT_TOLERENCE);
+                    translate([0,0,-big])
+                        cylinder(h = big, r = NUT_DIAMETER * 0.5 + NUT_TOLERENCE, $fn = 6);
                 }
         }
         
@@ -131,8 +134,7 @@ module case(
                 translate([0,0, offset.z])
                     rotate([0, rotation.y, 0])
                         rotate([rotation.x,0,0]){                           
-                            
-                            
+                                                        
                             difference(){
                                 union(){
                                     // plate cutout
@@ -176,10 +178,10 @@ module case(
                                                 difference(){
                                                     union(){
                                                         housingRadius = CASE_BOLT_HOUSING_WIDTH + BOLT_DIAMETER * 0.5 + BOLT_TOLERENCE;
-                                                        flangeHeight = plateUndersideClearance - PCB_PLATE_OFFSET_Z - 2;
-                                                        flangeOffset = 5;
 
-                                                        if(CASE_STANDOFF_FLANGED)
+                                                        if(flangeStandoffs){
+                                                            flangeHeight = plateUndersideClearance - PCB_PLATE_OFFSET_Z - 2;
+                                                            flangeOffset = 5;
                                                             translate([0, flangeOffset / 2, flangeHeight / 2])
                                                                 linear_extrude(
                                                                     height = plateUndersideClearance - PCB_PLATE_OFFSET_Z - 2,
@@ -187,6 +189,7 @@ module case(
                                                                     center = true)
                                                                     translate([0,-flangeOffset,0])
                                                                         circle(r = housingRadius * 2);
+                                                        }
                                                         else 
                                                             cylinder(h = plateUndersideClearance - PCB_PLATE_OFFSET_Z - 2, r1 = housingRadius * 1.5, r2 = housingRadius);
 
@@ -236,7 +239,8 @@ module case(
                 section[5],
                 section[6],
                 section[7],
-                section[8]);
+                section[8],
+                section[9]);
 
         // custom cable cutouts; not really parameterised at the moment
         rotate([0,0, HAND_ROTATION.z]){
@@ -293,7 +297,7 @@ module case(
                         
                         // reset button
                         resetHoleSize = 1.0;
-                        translate([PLATE_BEZEL + 37.2, 68, 6.5])
+                        translate([PLATE_BEZEL + 39.1, 68, 5.5])
                             rotate([90,0,0]){
                                 translate([0,0,0])
                                     linear_extrude(10)
@@ -323,7 +327,8 @@ case([
             PCB_PLATE_OFFSET_Z + 
             PCB_UNDERSIDE_CLEARANCE + 
             PCB_THICKNESS,
-        boltLength = BOLT_LENGTH),
+        boltLength = BOLT_LENGTH,
+        flangeStandoffs = true),
     caseSection(
         keyPositions = THUMB_GRID,
         keyHeight = 1.25,

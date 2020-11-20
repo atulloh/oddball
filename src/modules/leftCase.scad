@@ -14,7 +14,8 @@ module leftCase(){
                 PCB_PLATE_OFFSET_Z + 
                 PCB_UNDERSIDE_CLEARANCE + 
                 PCB_THICKNESS,
-            boltLength = BOLT_LENGTH),
+            boltLength = BOLT_LENGTH,
+            flangeStandoffs = true),
         caseSection(
             keyPositions = THUMB_GRID,
             keyHeight = 1.25,
