@@ -176,7 +176,20 @@ module case(
                                                 difference(){
                                                     union(){
                                                         housingRadius = CASE_BOLT_HOUSING_WIDTH + BOLT_DIAMETER * 0.5 + BOLT_TOLERENCE;
-                                                        cylinder(h = plateUndersideClearance - 10, r1 = housingRadius * 1.5, r2 = housingRadius);
+                                                        flangeHeight = plateUndersideClearance - PCB_PLATE_OFFSET_Z - 2;
+                                                        flangeOffset = 5;
+
+                                                        if(CASE_STANDOFF_FLANGED)
+                                                            translate([0, flangeOffset / 2, flangeHeight / 2])
+                                                                linear_extrude(
+                                                                    height = plateUndersideClearance - PCB_PLATE_OFFSET_Z - 2,
+                                                                    scale = 0.5,
+                                                                    center = true)
+                                                                    translate([0,-flangeOffset,0])
+                                                                        circle(r = housingRadius * 2);
+                                                        else 
+                                                            cylinder(h = plateUndersideClearance - PCB_PLATE_OFFSET_Z - 2, r1 = housingRadius * 1.5, r2 = housingRadius);
+
                                                         cylinder(h = plateUndersideClearance, r = CASE_BOLT_HOUSING_WIDTH + BOLT_DIAMETER * 0.5 + BOLT_TOLERENCE);
                                                     }
                                                     cylinder(h = plateUndersideClearance, r = BOLT_DIAMETER * 0.5 + BOLT_TOLERENCE);
