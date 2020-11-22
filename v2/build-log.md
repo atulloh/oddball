@@ -12,7 +12,7 @@ parent: v2
 
 ## Round 2... Fight! 
 
-I've been using my [Oddball v1]({{site.baseurl}}/v1/build-guide) for around 6 months. I really like it; having a trackball embedded in the keyboard really exceeded my expectations. It helps with all kinds of everyday tasks, and saves you from blindly having to find your way to your mouse and back again. I actually found it a bit limiting when I had to switch back to my more traditional keyboard with a separate mouse; so much so I decided to build another so I could have one for both work and at home. However, if I was going to make another, there were some improvements I wanted to make!
+I've been using my [Oddball v1]({{site.baseurl}}/v1/build-log) for around 6 months. I really like it; having a trackball embedded in the keyboard really exceeded my expectations. It helps with all kinds of everyday tasks, and saves you from blindly having to find your way to your mouse and back again. I actually was finding it a bit limiting when switching back to a more traditional keyboard with a separate mouse; so much so I decided to build another so I could have one for both work and at home. However, if I was going to make another, there were some improvements I wanted to make!
 
 ### Trackball
 
@@ -32,7 +32,7 @@ The trackball was a _tiny_ bit of a stretch. While not a dealbreaker, it would h
 
 ### Sensor and housing
 
-The ADNS9800 sensor was fine, but I'd noticed the [Ploopy trackball](https://www.ploopy.co/) was using the PMW33600 internally, which was slightly newer, offered higher DPI, ran with more flexible input voltages, along with a few other features. The PMW3360 was a slightly newer sensor, and although seeemed to be manufactured by different companies, the interfacing code needed was nearly identical, so it was pretty easy to switch. Again, [JACK Enterprise on Tindie had a breakout board](https://www.tindie.com/products/jkicklighter/pmw3360-motion-sensor/) with the necessary resistors/capactiros/etc ready to go.
+The ADNS9800 sensor was fine, but I'd noticed the [Ploopy trackball](https://www.ploopy.co/) was using the PMW33600 internally, which was slightly newer, offered higher DPI, ran with more flexible input voltages, along with a few other features. The PMW3360 was a slightly newer sensor, and although seeemed to be manufactured by different companies, the interfacing code needed was nearly identical, so it was pretty easy to switch. Again, [JACK Enterprise on Tindie had a breakout board](https://www.tindie.com/products/jkicklighter/pmw3360-motion-sensor/) with the necessary resistors/capacitors/etc ready to go.
 
 It was a slightly different shape, so it forced me to increase the plate and housing a little around the trackball. I printed a cover to fit it nicely, rather than relying on M2 standoffs, as previously the lens could fall out if you jiggled the whole thing upsidedown.
 
@@ -58,7 +58,7 @@ It was a slightly different shape, so it forced me to increase the plate and hou
 
 As a bonus, going over the trackball code for v1 for the PMW changes, I found a few bugs and improved the trackball motion for v1!
 
-I also went back and added a simliar thing for the ADNS9800, which I'd used in v1, but also wanted to support in v2:
+I also went back and added a similar cover for the ADNS9800, which I'd used in v1, but also wanted to support in v2:
 
 <figure>
   <img src="{{site.baseurl}}/assets/images/adns-cover-top.jpg" alt="ADNS cover top"/>
@@ -74,7 +74,7 @@ I also went back and added a simliar thing for the ADNS9800, which I'd used in v
 
 Oddball v1 had included my first PCB design, and in it I'd made a few mistakes. The main issues were a few silkscreens were back-to-font (diodes and TRRS sockets), and not enough clearance between the TRRS jacks and the switches. These were relatively easy fixes, which I ammended in the [r1.1 PCB](https://github.com/atulloh/oddball/tree/master/output/pcbs/v1.1), and doubled checked for [r2.0 PCB](https://github.com/atulloh/oddball/tree/master/output/pcbs/v2.0).
 
-I'd used Teensy 2.0 MCUs in v1, which used Micro USB ports, which are pretty daggy. USB-C is much cooler, especially when you are plugging into a socket behind a keyboard you can't really see. As another bonus, the pinout is similar to Pro Micros or something like the (nice!nano)[https://nicekeyboards.com/products/nice-nano-v1-0] if I/someone ever wanted to make the Oddball wireless.
+I'd used Teensy 2.0 MCUs in v1, which used Micro USB ports, which are pretty daggy. USB-C is much cooler, especially when you are plugging into a socket behind a keyboard you can't really see. As another bonus, the pinout is similar to Pro Micros or something like the [nice!nano](https://nicekeyboards.com/products/nice-nano-v1-0) if I/someone ever wanted to make the Oddball wireless.
 
 <figure>
   <img src="{{site.baseurl}}/assets/images/r2-pcb-1.jpg" alt="r2.0 PCB side A"/>
@@ -109,7 +109,7 @@ I also thought I'd lube my switches, go all out on keycaps, and leverage the 8-b
 
 #### Case
 
-I doubt many people will care, but I completely rewrote the OpenSCAD code for v2. I even nearly managed to do it all with barely any (magic numbers)[https://en.wikipedia.org/wiki/Magic_number_(programming)], but a few snuck in. The rewrite should make it much easier for me if I (or perhaps someone else) ever come back to this code base and needs to change something.
+I doubt many people will care, but I completely rewrote the OpenSCAD code for v2. I even nearly managed to do it all with barely any [magic numbers](https://en.wikipedia.org/wiki/Magic_number_(programming)), but a few snuck in. The rewrite should make it much easier for me if I (or perhaps someone else) ever come back to this code base and needs to change something.
 
 <figure>
   <img src="{{site.baseurl}}/assets/images/open-scad-1.png" alt="Open SCAD 1"/>
@@ -130,6 +130,54 @@ As I mentioned earlier, in adding suport for the PMW3600, I also came across som
 
 ### Assembly
 
-// TODO:
+You can see a more detailed assembly process in the [build guide]({{site.baseurl}}/v2/build-buid), but following is a general summary.
+
+#### Plates and PCBs
+
+<figure>
+  <img src="{{site.baseurl}}/assets/images/assembled-left-back.jpg" alt="Left PCB"/>
+  <figcaption>Assembled left PCB</figcaption>
+</figure>
+
+<figure>
+  <img src="{{site.baseurl}}/assets/images/assembled-right-back.jpg" alt="Right PCB"/>
+  <figcaption>Assembled right PCB</figcaption>
+</figure>
+
+<figure>
+  <img src="{{site.baseurl}}/assets/images/assembled-thumb-back.jpg" alt="Thumb PCB"/>
+  <figcaption>Assembled right thumb PCB with trackball cutout</figcaption>
+</figure>
+
+<figure>
+  <img src="{{site.baseurl}}/assets/images/assembled-thumb-front.jpg" alt="Thumb front"/>
+  <figcaption>Other side</figcaption>
+</figure>
+
+#### Switches
+
+This was the first build where I lubed the switches. I used 67g Zilents, lubed with Tribosys 3204, and GPL 107 oil for the springs.
+
+<figure>
+  <img src="{{site.baseurl}}/assets/images/switches-lube.jpg" alt="Lubing"/>
+  <figcaption>First time lubing; Zilents and Halo Clears</figcaption>
+</figure>
+
+<figure>
+  <img src="{{site.baseurl}}/assets/images/assembly-switches.jpg" alt="Left front"/>
+  <figcaption>Lubed Zilents made for a much quieter build than my previous one</figcaption>
+</figure>
+
+#### Dampening
+
+#### Printing
+
+I decided to the 3D print at 100% infill. It wasn't really required, and is overkill, in terms of stength, but I wanted to give it as much weigh possible. The prints alone ended up weighing about 400 grams (TODO: check this) each. This ended up taking around 50 hours per side!
+
+TODO: print pics
+
+#### Painting
+
+#### Final assembly
 
 ## Closing throughts
