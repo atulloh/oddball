@@ -132,7 +132,7 @@ THUMB_FEET_POSITIONS =
 
 HAND_ROTATION = [5, -8.5, 0];
 THUMB_ROTATION = [10, -2, -10.25];
-THUMB_OFFSET = [80.5, -21.5, 8.5];
+THUMB_OFFSET = [80.5, -22, 8.5];
 
 // cutouts
 
