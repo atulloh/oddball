@@ -32,12 +32,24 @@ module bearingMount(){
 
             rotate_extrude(convexity = 10)
                 minkowski(){
-                    polygon([
-                        [trackballRadius + BEARING_MOUNT_TOP_CURVE_RADIUS,0],
-                        [trackballRadius + ringWidthBottom - BEARING_MOUNT_TOP_CURVE_RADIUS, 0],
-                        [trackballRadius - BEARING_MOUNT_TOP_CURVE_RADIUS + BEARING_MOUNT_TOP_X_MAX, BEARING_MOUNT_HEIGHT - BEARING_MOUNT_TOP_CURVE_RADIUS],
-                        [trackballRadius + BEARING_MOUNT_TOP_CURVE_RADIUS + BEARING_MOUNT_TOP_X_MIN, BEARING_MOUNT_HEIGHT - BEARING_MOUNT_TOP_CURVE_RADIUS],
-                    ]);
+                    difference(){
+                        polygon([
+                            [0,0],
+                            [trackballRadius + ringWidthBottom - BEARING_MOUNT_TOP_CURVE_RADIUS, 0],
+                            [trackballRadius - BEARING_MOUNT_TOP_CURVE_RADIUS + BEARING_MOUNT_TOP_X_MAX, BEARING_MOUNT_HEIGHT - BEARING_MOUNT_TOP_CURVE_RADIUS],
+                            [0, BEARING_MOUNT_HEIGHT - BEARING_MOUNT_TOP_CURVE_RADIUS],
+                        ]);
+
+                        
+                        ballCutoutRadius = TRACKBALL_DIAMETER * 0.5 + TRACKBALL_BEARING_MOUNT_CLEARANCE;
+
+                        translate([0,getTrackballZ()])
+                            intersection(){
+                                circle(r = ballCutoutRadius);
+                                translate([0, -ballCutoutRadius])
+                                    square([ballCutoutRadius, ballCutoutRadius] * 2);
+                            }
+                    }
                     
                     difference(){
                         circle(r = BEARING_MOUNT_TOP_CURVE_RADIUS);
