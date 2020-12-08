@@ -10,11 +10,9 @@ parent: v2
   <figcaption>TODO: add pic</figcaption>
 </figure>
 
-## Round 2... Fight! 
-
 I've been using my [Oddball v1]({{site.baseurl}}/v1/build-log) for around 6 months. I really like it; having a trackball embedded in the keyboard really exceeded my expectations. It helps with all kinds of everyday tasks, and saves you from blindly having to find your way to your mouse and back again. I actually was finding it a bit limiting when switching back to a more traditional keyboard with a separate mouse; so much so I decided to build another so I could have one for both work and at home. However, if I was going to make another, there were some improvements I wanted to make!
 
-### Trackball
+### Improving the trackball
 
 #### Position
 
@@ -30,7 +28,7 @@ The trackball was a _tiny_ bit of a stretch. While not a dealbreaker, it would h
   <figcaption>v2 right thumb plate; trackball closer to hand/wrist</figcaption>
 </figure>
 
-### Sensor and housing
+#### Sensor and mount
 
 The ADNS9800 sensor was fine, but I'd noticed the [Ploopy trackball](https://www.ploopy.co/) was using the PMW33600 internally, which was slightly newer, offered higher DPI, ran with more flexible input voltages, along with a few other features. The PMW3360 was a slightly newer sensor, and although seeemed to be manufactured by different companies, the interfacing code needed was nearly identical, so it was pretty easy to switch. Again, [JACK Enterprise on Tindie had a breakout board](https://www.tindie.com/products/jkicklighter/pmw3360-motion-sensor/) with the necessary resistors/capacitors/etc ready to go.
 
@@ -70,7 +68,7 @@ I also went back and added a similar cover for the ADNS9800, which I'd used in v
   <figcaption>Much better</figcaption>
 </figure>
 
-### PCB
+### Improving the PCB
 
 Oddball v1 had included my first PCB design, and in it I'd made a few mistakes. The main issues were a few silkscreens were back-to-font (diodes and TRRS sockets), and not enough clearance between the TRRS jacks and the switches. These were relatively easy fixes, which I ammended in the [r1.1 PCB](https://github.com/atulloh/oddball/tree/master/output/pcbs/v1.1), and doubled checked for [r2.0 PCB](https://github.com/atulloh/oddball/tree/master/output/pcbs/v2.0).
 
@@ -86,26 +84,7 @@ I'd used Teensy 2.0 MCUs in v1, which used Micro USB ports, which are pretty dag
   <figcaption>And switched to use an Elite C</figcaption>
 </figure>
 
-### Look
-
-#### Plates
-
-The kids-toy-vibe of the v1 was cute, but I thought I'd try to go a bit more stylish for v2. This involved _not_ painting the plates, and getting brass plates instead.
-
-<figure>
-  <img src="{{site.baseurl}}/assets/images/brass-plates.jpg" alt="Brass plates"/>
-  <figcaption>Brass plates cut by LaserBoost</figcaption>
-</figure>
-
-#### Keycaps
-
-I also thought I'd lube my switches, go all out on keycaps, and leverage the 8-ball which feels like the epitome of pool imagry/iconography.
-
-// TODO: keycaps/closeup
-
-// TODO: polishing info
-
-### Clean code
+### Improving the code
 
 #### Case
 
@@ -131,6 +110,39 @@ As I mentioned earlier, in adding suport for the PMW3600, I also came across som
 ### Assembly
 
 You can see a more detailed assembly process in the [build guide]({{site.baseurl}}/v2/build-buid), but following is a general summary.
+
+#### Plates
+
+The kids-toy-vibe of the v1 was cute, but I thought I'd try to go a bit more stylish for v2. This involved _not_ painting the plates, and getting brass plates instead.
+
+<figure>
+  <img src="{{site.baseurl}}/assets/images/brass-plates.jpg" alt="Brass plates"/>
+  <figcaption>Brass plates cut by LaserBoost</figcaption>
+</figure>
+
+#### Keycaps
+
+I wanted to go for a more retro, utilitarian look, so I thought SA keycaps fit the bill. I also though shiny keycaps looks more retro, so I decided to polish them. This took ages! Around five minutes per key; lucky I only had to do 39 and not a full size keyboard.
+
+<figure>
+  <img src="{{site.baseurl}}/assets/images/polish-bottle.jpg" alt="Polish bottle"/>
+  <figcaption>I got this from a car care shop; I'd seen others use it</figcaption>
+</figure>
+
+<figure>
+  <img src="{{site.baseurl}}/assets/images/polish-diy-buff.jpg" alt="Polish DIY"/>
+  <figcaption>I made this with an old sponge; it didn't work</figcaption>
+</figure>
+
+<figure>
+  <img src="{{site.baseurl}}/assets/images/polish-buff.jpg" alt="Polish buff"/>
+  <figcaption>Used this instead</figcaption>
+</figure>
+
+<figure>
+  <img src="{{site.baseurl}}/assets/images/polish-comparison.jpg" alt="Polish comparison"/>
+  <figcaption>Before and after; around 5 minutes work</figcaption>
+</figure>
 
 #### Plates and PCBs
 

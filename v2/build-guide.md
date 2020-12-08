@@ -132,7 +132,7 @@ Headers are needed on the thumb PCBs for the wires to attach to. On both thumb P
 Headers are also needed on the respective sensor breakout board. For the ADNS, use 2x4, stacked, right-angled headers.
 
 <figure>
-  <img src="{{site.baseurl}}/assets/images/pmw-headers.jpg" alt="PMW headers"/>
+  <img src="{{site.baseurl}}/assets/images/pmw-headers-1.jpg" alt="PMW headers"/>
   <figcaption>PMW with headers</figcaption>
 </figure>
 
