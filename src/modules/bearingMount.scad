@@ -80,7 +80,7 @@ module bearingMount(){
                     translate([-cutoutLength * 0.25, 0, 0])
                         cube([
                             cutoutLength, 
-                            1, 
+                            BEARING_DIAMETER * 0.5,
                             BEARING_OFFSET_Z + BEARING_DIAMETER * 0.75], 
                             center = true);
                 }
