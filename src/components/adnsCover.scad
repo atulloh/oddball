@@ -1,5 +1,5 @@
 use<../modules/adnsCover.scad>;
 
-// can print without supports upside down
+// flip; easier to 3D print
 rotate([180,0,0])
     adnsCover($fn = 100);
