@@ -71,9 +71,9 @@ module bearingMountPlug(){
     {
         intersection(){
             translate([0, 0, BEARING_OFFSET_Z ])
-                rotate([0,-30,0])
+                rotate([0,-33,0])
                     translate([0,0,-BEARING_OFFSET_Z - much])
-                        cylinder(r = BEARING_DIAMETER * 0.5 + 0.5, h = BEARING_OFFSET_Z + much);
+                        cylinder(r = BEARING_DIAMETER * 0.5 + BEARING_TOLERENCE, h = BEARING_OFFSET_Z + much);
 
             translate([-bearingOffsetXY,0,0])
                 ring();
