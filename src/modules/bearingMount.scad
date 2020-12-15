@@ -66,6 +66,7 @@ module ring(){
 module bearingMountPlug(){
 
     much = 10;
+    notMuch = 0.5;
 
     difference()
     {
@@ -73,7 +74,7 @@ module bearingMountPlug(){
             translate([0, 0, BEARING_OFFSET_Z ])
                 rotate([0,-33,0])
                     translate([0,0,-BEARING_OFFSET_Z - much])
-                        cylinder(r = BEARING_DIAMETER * 0.5 + BEARING_TOLERENCE, h = BEARING_OFFSET_Z + much);
+                        cylinder(r = BEARING_DIAMETER * 0.5 + BEARING_TOLERENCE * 4, h = BEARING_OFFSET_Z + much - notMuch);
 
             translate([-bearingOffsetXY,0,0])
                 ring();
