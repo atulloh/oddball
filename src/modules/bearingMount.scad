@@ -23,17 +23,18 @@ module hole(){
             
             translate([0,-SENSOR_PCB_MOUNT_OFFSET * 0.5])
                 square([BOLT_TOP_DIAMETER + BOLT_TOLERENCE * 2, SENSOR_PCB_MOUNT_OFFSET], center = true);
-        }
-    
+        }    
 }
 
-module ring(){
-
-    trackballRadius = getTrackballHoleRadius();
-    ringWidthBottom = TRACKBALL_PLATE_BEZEL;
+module bearingMount(){
     
-    union(){
-
+    difference()
+    {
+        trackballRadius = getTrackballHoleRadius();
+        ringWidthBottom = TRACKBALL_PLATE_BEZEL;
+        
+        // general ring
+        
         rotate_extrude(convexity = 10)
             minkowski(){
                 difference(){
@@ -60,36 +61,6 @@ module ring(){
                         square([BEARING_MOUNT_TOP_CURVE_RADIUS * 2, BEARING_MOUNT_TOP_CURVE_RADIUS * 2]);
                 }
             }
-    }
-}
-
-module bearingMountPlug(){
-
-    much = 10;
-    notMuch = 0.5;
-
-    difference()
-    {
-        intersection(){
-            translate([0, 0, BEARING_OFFSET_Z ])
-                rotate([0,-33,0])
-                    translate([0,0,-BEARING_OFFSET_Z - much])
-                        cylinder(r = BEARING_DIAMETER * 0.5 + BEARING_TOLERENCE * 4, h = BEARING_OFFSET_Z + much - notMuch);
-
-            translate([-bearingOffsetXY,0,0])
-                ring();
-        }
-                
-        translate([0,0, BEARING_OFFSET_Z])
-            sphere(d = BEARING_DIAMETER + BEARING_TOLERENCE * 2);
-    }
-}
-
-module bearingMount(){
-    
-    difference()
-    {
-        ring();
 
         // bearing holes
 
@@ -98,13 +69,9 @@ module bearingMount(){
             angle = 120 * i;
 
             translate([cos(angle), sin(angle), 0] * bearingOffsetXY)
-                rotate([0, 0, angle]){
-                                    
+                rotate([0, 0, angle])
                     translate([0,0, BEARING_OFFSET_Z])
                         sphere(d = BEARING_DIAMETER + BEARING_TOLERENCE * 2);
-
-                    bearingMountPlug();
-                }
         }
             
         // bolt holes
