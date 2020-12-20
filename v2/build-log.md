@@ -182,13 +182,57 @@ This was the first build where I lubed the switches. I used 67g Zilents, lubed w
 
 #### Dampening
 
+I wanted a quieter build than my last, so thought I'd add in a little dampener for good measure. I bought some neoprene and cut it to fit. I never did any testing comparisons, with and without, so I'm not even sure if it made any difference!
+
+<figure>
+  <img src="{{site.baseurl}}/assets/images/neoprene.jpg" alt="Neoprene"/>
+  <figcaption>$10 worth of neoprene</figcaption>
+</figure>
+
+<figure>
+  <img src="{{site.baseurl}}/assets/images/neoprene-cutout.jpg" alt="Neoprene cut"/>
+  <figcaption>Neoprene cut to fit test print</figcaption>
+</figure>
+
 #### Printing
 
-I decided to the 3D print at 100% infill. It wasn't really required, and is overkill, in terms of stength, but I wanted to give it as much weigh possible. The prints alone ended up weighing about 400 grams (TODO: check this) each. This ended up taking around 50 hours per side!
+I decided to the 3D print at 100% infill. It wasn't really required, and is overkill, in terms of stength, but I wanted to give it as much weight possible. The prints alone ended up weighing about 400 grams (TODO: check this) each. This ended up taking around 50 hours per side!
 
-TODO: print pics
+<figure>
+  <img src="{{site.baseurl}}/assets/images/print-weigh.jpg" alt="Weighing print"/>
+  <figcaption>Each half was pretty solid for a plastic print</figcaption>
+</figure>
+
+<figure>
+  <img src="{{site.baseurl}}/assets/images/print-left-sanded.jpg" alt="Left print sanded"/>
+  <figcaption>Left print; sanded and bolt tolerences checked</figcaption>
+</figure>
+
+<figure>
+  <img src="{{site.baseurl}}/assets/images/print-sanded.jpg" alt="Sanded prints"/>
+  <figcaption>Parts externally sanded, using 240, 400, 800 and 1200 grit wet-dry sandpaper</figcaption>
+</figure>
+
+Due to various tolerences, it took a fair few attempts to get the trackball mount ring _just the right_ size for my ceramic bearing to press fit.
+
+<figure>
+  <img src="{{site.baseurl}}/assets/images/bearing-attempts.jpg" alt="Bearing attempts"/>
+  <figcaption>I probably printed around 20 of these trying to get it just right</figcaption>
+</figure>
 
 #### Painting
+
+I did similar to my last build, but skipped the primer. I did two to three coats of "hunter green", and two coats of clear coat (satin). I used Rust-Oleum; it was only slightly more expensive, but in my previous build I'd found it sprayed better and gave a better colour that some of the cheaper brand I'd tried.
+
+<figure>
+  <img src="{{site.baseurl}}/assets/images/print-taped.jpg" alt="Taped prints"/>
+  <figcaption>Parts sanded, taped, and ready for painting</figcaption>
+</figure>
+
+<figure>
+  <img src="{{site.baseurl}}/assets/images/print-painting.jpg" alt="Prints drying"/>
+  <figcaption>Prints drying; I overdid it a little</figcaption>
+</figure>
 
 #### Final assembly
 

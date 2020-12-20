@@ -144,18 +144,36 @@ To build for the ADNS sensor, run `make oddball/v2:default`.
 
 To build for the PMW sensor, run `make oddball/v2:pmw3360`.
 
-### 9. Sanity check
+Plug everything in and check
+- keys of both sides are working
+- mouse sensor is working
 
-_TODO_
+_TODO: elite C photo closeup of headers_
 
-### 10. Clean up
+### 10. Switches
 
-_TODO_
+Before soldering the switches in, cut component legs on the top of the PCB as flush as possible. This will give the switches room to sit flush on the PCB. Then solder your switches in.
 
-### 11. Switches
+<figure>
+  <img src="{{site.baseurl}}/assets/images/assembly-switches.jpg" alt="Switches"/>
+  <figcaption>Switches soldered in</figcaption>
+</figure>
 
-_TODO_
+### 11. Mouse thumb module
+
+Insert the bearings into the trackball ring. Then bolt the ring, plate, sensor cover, and sensor, together with M2 bolts and nuts.
+
+<figure>
+  <img src="{{site.baseurl}}/assets/images/thumb-test-2.jpg" alt="Thumb module"/>
+  <figcaption>Trackball sensor and mounting ring bolted to switch plate; ignore the pins, they should be right-angled</figcaption>
+</figure>
 
 ### 12. Assemble
 
-_TODO_
+- put in the main hand plates
+- thread jumper wires through thumb cutouts
+- plug jumper wires into thumb modules
+- put in thumb plates
+- plug two halves togther
+- plug in right side and check everything works
+- 
