@@ -5,4 +5,4 @@ has_children: true
 
 # v1
 
-_TODO: picture_
+![]({{site.baseurl}}/assets/images/oddball-home.jpg)
