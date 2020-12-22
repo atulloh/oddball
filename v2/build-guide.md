@@ -3,7 +3,7 @@ title: Build Guide
 parent: v2
 ---
 
-# v1 Build Guide
+# v2 Build Guide
 
 ## Bill of materials
 
