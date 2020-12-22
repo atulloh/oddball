@@ -16,6 +16,7 @@ The Oddball is a split mechanical keyboard with an integrated trackball. While d
 
 ![]({{site.baseurl}}/assets/images/oddball-home.jpg)
 
+- [source files](https://github.com/atulloh/oddball/tree/master/output)
 - [gallery]({{site.baseurl}}/v1/gallery)
 - [build log]({{site.baseurl}}/v1/build-log)
 - [build guide]({{site.baseurl}}/v1/build-guide)
@@ -25,8 +26,9 @@ The Oddball is a split mechanical keyboard with an integrated trackball. While d
 
 ## Version 2
 
-_TODO: pic_
+Nice picture coming soon
 
+- [source files](https://github.com/atulloh/oddball/tree/master/output)
 - [gallery]({{site.baseurl}}/v2/gallery)
 - [build log]({{site.baseurl}}/v2/build-log)
 - [build guide]({{site.baseurl}}/v2/build-guide)
