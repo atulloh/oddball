@@ -5,4 +5,4 @@ has_children: true
 
 # v2
 
-_TODO: picture_
+Nice picture coming soon
