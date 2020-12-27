@@ -17,7 +17,7 @@ module hole(){
     }
 
     translate([0,0, BEARING_BOLT_CLEARANCE_Z])
-        linear_extrude(BOLT_TOP_HEIGHT){
+        linear_extrude(BOLT_TOP_HEIGHT + BEARING_MOUNT_BOLT_TOP_CLEARANCE){
 
             circle(d = BOLT_TOP_DIAMETER + BOLT_TOLERENCE * 2);            
             
