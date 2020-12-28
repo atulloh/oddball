@@ -17,7 +17,7 @@ module pmwCover(){
     }
 
     difference(){
-        linear_extrude(STANDOFF_HEIGHT)
+        linear_extrude(getStandoffHeight())
             difference(){
 
                 union(){
@@ -43,7 +43,7 @@ module pmwCover(){
                 center = true);
                 
         // cutout for trackball
-        translate([0, 0, getTrackballZ() + STANDOFF_HEIGHT])
+        translate([0, 0, TRACKBALL_POSITION_Z + getStandoffHeight()])
             sphere(d = TRACKBALL_DIAMETER + SENDOR_TRACKBALL_CLEARANCE);
     }
 }

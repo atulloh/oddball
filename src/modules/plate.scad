@@ -1,7 +1,7 @@
 include <../config.scad>;
 
-function getTrackballZ() = 
-    -STANDOFF_HEIGHT +
+function getStandoffHeight() = 
+    -TRACKBALL_POSITION_Z +
     SENSOR_LENS_HEIGHT_ABOVE_BOARD +
     SENSOR_LENS_CLEARANCE +
     TRACKBALL_DIAMETER * 0.5;
@@ -9,7 +9,7 @@ function getTrackballZ() =
 function getTrackballHoleRadius() =
     sqrt(
         (TRACKBALL_DIAMETER * TRACKBALL_DIAMETER) / 4 -
-        getTrackballZ() * getTrackballZ())
+        TRACKBALL_POSITION_Z * TRACKBALL_POSITION_Z)
         + TRACKBALL_PLATE_CLEARANCE;
 
 // draws a 2D circle representing a bolt hole

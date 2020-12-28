@@ -47,7 +47,7 @@ module bearingMount(){
                     
                     ballCutoutRadius = TRACKBALL_DIAMETER * 0.5 + TRACKBALL_BEARING_MOUNT_CLEARANCE;
 
-                    translate([0,getTrackballZ()])
+                    translate([0,TRACKBALL_POSITION_Z])
                         intersection(){
                             circle(r = ballCutoutRadius);
                             translate([0, -ballCutoutRadius])

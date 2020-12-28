@@ -4,7 +4,7 @@ use <../modules/plate.scad>;
 
 module adnsCover(){
     difference(){
-        linear_extrude(STANDOFF_HEIGHT)
+        linear_extrude(getStandoffHeight())
             difference(){
                 circle(d = ADNS_PCB_DIAMETER);
                 
@@ -43,7 +43,7 @@ module adnsCover(){
             }
             
         // cutout for trackball
-        translate([0, 0, getTrackballZ() + STANDOFF_HEIGHT])
+        translate([0, 0, TRACKBALL_POSITION_Z + getStandoffHeight()])
             sphere(d = TRACKBALL_DIAMETER + SENDOR_TRACKBALL_CLEARANCE);
     }    
 }

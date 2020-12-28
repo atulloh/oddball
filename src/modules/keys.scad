@@ -18,7 +18,7 @@ module keys(
                 translate([0.5, 0.5 * keyHeight, 0] * 1U){
                     
                     // trackball
-                    translate([0, 0, getTrackballZ()])
+                    translate([0, 0, TRACKBALL_POSITION_Z])
                         sphere(d = TRACKBALL_DIAMETER);
                         
                     // trackball mount
@@ -26,7 +26,7 @@ module keys(
                         bearingMount();
 
                     // sensor cover                    
-                    translate([0, 0, -STANDOFF_HEIGHT]){
+                    translate([0, 0, -getStandoffHeight()]){
                         if(keyPosition.z == "adns")
                             adnsCover();
                         else
@@ -34,7 +34,7 @@ module keys(
                     }
 
                     // sensor
-                    translate([0, 0, -STANDOFF_HEIGHT - SENSOR_PCB_THICKNESS]){
+                    translate([0, 0, -getStandoffHeight() - SENSOR_PCB_THICKNESS]){
                         if(keyPosition.z == "adns")
                             cylinder(d = TRACKBALL_BOLT_HOLES_DIAMETER, h = SENSOR_PCB_THICKNESS);
                         else
