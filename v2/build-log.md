@@ -234,6 +234,26 @@ I did similar to my last build, but skipped the primer. I did two to three coats
   <figcaption>Prints drying; I overdid it a little</figcaption>
 </figure>
 
+<figure>
+  <img src="{{site.baseurl}}/assets/images/assembling-v2.jpg" alt="Right assembly"/>
+  <figcaption>Putting it all together was a little fiddly</figcaption>
+</figure>
+
+<figure>
+  <img src="{{site.baseurl}}/assets/images/assembled-v2.jpg" alt="Assembled"/>
+  <figcaption>Tada</figcaption>
+</figure>
+
+<figure>
+  <img src="{{site.baseurl}}/assets/images/assembled-front-v2.jpg" alt="Front"/>
+  <figcaption>Front view of tenting</figcaption>
+</figure>
+
+<figure>
+  <img src="{{site.baseurl}}/assets/images/assembled-weight-v2.jpg" alt="Weight"/>
+  <figcaption>Relatively hefty for a 40%</figcaption>
+</figure>
+
 #### Final assembly
 
 ## Closing throughts
