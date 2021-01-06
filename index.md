@@ -7,6 +7,7 @@ The Oddball is a split mechanical keyboard with an integrated trackball. While d
 - 39 keys
 - trackball
 - click, click + drag, scroll
+- dynamic CPI (trackball cursor speed)
 - columnar staggered keys
 - tented case
 - angled thumb clusters
