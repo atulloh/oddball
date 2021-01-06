@@ -10,13 +10,13 @@ parent: v2
   <figcaption>TODO: add pic</figcaption>
 </figure>
 
-I've been using my [Oddball v1]({{site.baseurl}}/v1/build-log) for around 6 months. I really like it; having a trackball embedded in the keyboard really exceeded my expectations. It helps with all kinds of everyday tasks, and saves you from blindly having to find your way to your mouse and back again. I actually was finding it a bit limiting when switching back to a more traditional keyboard with a separate mouse; so much so I decided to build another so I could have one for both work and at home. However, if I was going to make another, there were some improvements I wanted to make!
+I've been using my [Oddball v1]({{site.baseurl}}/v1/build-log) for around 6 months. I really like it; having a trackball embedded in the keyboard really exceeded my expectations. It helps with all kinds of everyday tasks, and saves you from blindly having to find your way to your mouse and back again. I was actually finding it a bit limiting when switching back to a more traditional keyboard with a separate mouse; so much so I decided to build another so I could have one for both work and at home. However, if I was going to make another, there were some improvements I wanted to make!
 
 ### Improving the trackball
 
 #### Position
 
-The trackball was a _tiny_ bit of a stretch. While not a dealbreaker, it would have been nice if it was a little lower and closer to the thumb.
+The trackball was a _tiny_ bit of a stretch. While not a dealbreaker, I wanted it a little lower and closer to the thumb.
 
 <figure>
   <img src="{{site.baseurl}}/assets/images/thumb-plate-v1.PNG" alt="Thumb plate v1"/>
@@ -41,7 +41,7 @@ It was a slightly different shape, so it forced me to increase the plate and hou
 
 <figure>
   <img src="{{site.baseurl}}/assets/images/pmw-cover-assembled.jpg" alt="PMW cover assembled"/>
-  <figcaption>Sensor lens held snuggly in place</figcaption>
+  <figcaption>Sensor lens held snuggly in place (bearing mount/plate is just an early test)</figcaption>
 </figure>
 
 <figure>
@@ -65,14 +65,14 @@ I also went back and added a similar cover for the ADNS9800, which I'd used in v
 
 <figure>
   <img src="{{site.baseurl}}/assets/images/adns-cover-bottom.jpg" alt="ADNS cover bottom"/>
-  <figcaption>Much better</figcaption>
+  <figcaption>Much better; previously the lens would fall out in this position</figcaption>
 </figure>
 
 ### Improving the PCB
 
 Oddball v1 had included my first PCB design, and in it I'd made a few mistakes. The main issues were a few silkscreens were back-to-font (diodes and TRRS sockets), and not enough clearance between the TRRS jacks and the switches. These were relatively easy fixes, which I ammended in the [r1.1 PCB](https://github.com/atulloh/oddball/tree/master/output/pcbs/v1.1), and doubled checked for [r2.0 PCB](https://github.com/atulloh/oddball/tree/master/output/pcbs/v2.0).
 
-I'd used Teensy 2.0 MCUs in v1, which used Micro USB ports, which are pretty daggy. USB-C is much cooler, especially when you are plugging into a socket behind a keyboard you can't really see. As another bonus, the pinout is similar to Pro Micros or something like the [nice!nano](https://nicekeyboards.com/products/nice-nano-v1-0) if I/someone ever wanted to make the Oddball wireless.
+I'd used Teensy 2.0 MCUs in v1, which used Micro USB ports, which are pretty daggy. USB-C is much more convenient, especially when you are plugging into a socket behind a keyboard you can't really see. As another bonus, the pinout is similar to Pro Micros or something like the [nice!nano](https://nicekeyboards.com/products/nice-nano-v1-0) if I/someone ever wanted to make the Oddball wireless.
 
 <figure>
   <img src="{{site.baseurl}}/assets/images/r2-pcb-1.jpg" alt="r2.0 PCB side A"/>
@@ -92,7 +92,7 @@ I doubt many people will care, but I completely rewrote the OpenSCAD code for v2
 
 <figure>
   <img src="{{site.baseurl}}/assets/images/open-scad-1.png" alt="Open SCAD 1"/>
-  <figcaption>Nicer code plus debug drawing</figcaption>
+  <figcaption>Nicer code plus debug drawing (the grey bits)</figcaption>
 </figure>
 
 <figure>
@@ -103,13 +103,13 @@ I doubt many people will care, but I completely rewrote the OpenSCAD code for v2
 #### QMK
 
 As I mentioned earlier, in adding suport for the PMW3600, I also came across some bugs in my initial code which I've now fixed:
-- failed debounces (key pressed)
+- failed debounces (keys occasionally registered multiple times)
 - mouse jittering
 - keyboard failing to start
 
 ### Assembly
 
-You can see a more detailed assembly process in the [build guide]({{site.baseurl}}/v2/build-buid), but following is a general summary.
+You can see a more detailed assembly process in the [build guide]({{site.baseurl}}/v2/build-guide), but following is a general summary.
 
 #### Plates
 
@@ -196,7 +196,7 @@ I wanted a quieter build than my last, so thought I'd add in a little dampener f
 
 #### Printing
 
-I decided to the 3D print at 100% infill. It wasn't really required, and is overkill, in terms of stength, but I wanted to give it as much weight possible. The prints alone ended up weighing about 400 grams (TODO: check this) each. This ended up taking around 50 hours per side!
+I decided to the 3D print at 100% infill. It wasn't really required, and is overkill, in terms of stength, but I wanted to give it as much weight possible. The prints alone ended up weighing about 200 grams each. This ended up taking around 50 hours per side!
 
 <figure>
   <img src="{{site.baseurl}}/assets/images/print-weigh.jpg" alt="Weighing print"/>
@@ -222,7 +222,7 @@ Due to various tolerences, it took a fair few attempts to get the trackball moun
 
 #### Painting
 
-I did similar to my last build, but skipped the primer. I did two to three coats of "hunter green", and two coats of clear coat (satin). I used Rust-Oleum; it was only slightly more expensive, but in my previous build I'd found it sprayed better and gave a better colour that some of the cheaper brand I'd tried.
+I did similar to my last build, but skipped the primer. I did two to three coats of "hunter green", and two coats of clear coat (satin). I used Rust-Oleum; it was only slightly more expensive, but in my previous build I'd found it sprayed better and gave a better colour that some of the cheaper brand I'd tried. I rushed it a little, trying to fit it in with weather and two small chilren's sleep patterns, so it wasn't quite as neat as my v1 build.
 
 <figure>
   <img src="{{site.baseurl}}/assets/images/print-taped.jpg" alt="Taped prints"/>
@@ -240,11 +240,6 @@ I did similar to my last build, but skipped the primer. I did two to three coats
 </figure>
 
 <figure>
-  <img src="{{site.baseurl}}/assets/images/assembled-v2.jpg" alt="Assembled"/>
-  <figcaption>Tada</figcaption>
-</figure>
-
-<figure>
   <img src="{{site.baseurl}}/assets/images/assembled-front-v2.jpg" alt="Front"/>
   <figcaption>Front view of tenting</figcaption>
 </figure>
@@ -254,6 +249,24 @@ I did similar to my last build, but skipped the primer. I did two to three coats
   <figcaption>Relatively hefty for a 40%</figcaption>
 </figure>
 
-#### Final assembly
+<figure>
+  <img src="{{site.baseurl}}/assets/images/assembled-v2.jpg" alt="Assembled"/>
+  <figcaption>Tada</figcaption>
+</figure>
 
 ## Closing throughts
+
+I'm really happy with how this build turned out. It succeeded with:
+
+- better trackball position
+- better sensor
+- lower profile case
+- better typing angle
+- trackball mount more enclosed
+- easier to build
+- less buggy code
+- more maintainable code
+
+There are still a few niggling issues though. It is still pretty hard to build and assemble. I wish I'd used threaded inserts for the bolts rather than using nuts on the opposing side. I could have taken my time and done a better paint job. I could have merged the hand and thumb PCBs into a single file for cheaper manufacturing.
+
+However, a few people have managed to make their own builds of this design, and with the cleaner code base for others to potentially use or hack away at, I'm happy to leave this project in peace. I've got a keyboard that really suits my needs and that I love using. I'll hopefully be able to use it for many years. And if it ever finally breaks down, maybe I'll finally get around to perfecting it... for the third time.

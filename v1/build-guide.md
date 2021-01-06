@@ -32,7 +32,7 @@ parent: v1
 | 22mm M2 bolts | 2 | [Google](https://www.google.com/search?q=m2+22mm+bolts)
 | M2 nuts | 14 | [Google](https://www.google.com/search?q=m2+nuts)
 | Balls to support trackball, 3.175mm diameter | 3 | [Amazon](https://www.amazon.com/uxcell-Ceramic-Bearing-Silicon-Precision/dp/B07ZKTYTFJ/ref=sr_1_2?dchild=1&keywords=si3n4+balls+1%2F8&qid=1609759332&sr=8-2)
-| 0.98" / 25mm diameter trackball | 1 | [I used mini pool balls](https://www.amazon.com/CAOREN-16pcs-Billiard-Children-Accessories/dp/B0836WQQF5)
+| 0.98" / 25mm diameter trackball | 1 | [Mini pool balls](https://www.amazon.com/CAOREN-16pcs-Billiard-Children-Accessories/dp/B0836WQQF5) | Any hard, low friction 0.98” / 25mm diameter ball will suffice
 | MX style switch | 39 |
 
 

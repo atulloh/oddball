@@ -33,16 +33,12 @@ parent: v2
 | 22mm M2 bolts | 2 | [Google](https://www.google.com/search?q=m2+22mm+bolts)
 | M2 nuts | 14 | [Google](https://www.google.com/search?q=m2+nuts)
 | Balls to support trackball, 3.175mm diameter | 3 | [Amazon](https://www.amazon.com/uxcell-Ceramic-Bearing-Silicon-Precision/dp/B07ZKTYTFJ/ref=sr_1_2?dchild=1&keywords=si3n4+balls+1%2F8&qid=1609759332&sr=8-2)
-| 0.98" / 25mm diameter trackball | 1 | [I used mini pool balls](https://www.amazon.com/CAOREN-16pcs-Billiard-Children-Accessories/dp/B0836WQQF5)
+| 0.98" / 25mm diameter trackball | 1 | [Mini pool balls](https://www.amazon.com/CAOREN-16pcs-Billiard-Children-Accessories/dp/B0836WQQF5) | Any hard, low friction 0.98” / 25mm diameter ball will suffice
 | MX style switch | 39 |
 
 ## Steps
 
 Each half of the keyboard has **L** and **R** annotated for each component, corresponding to the left and right sides respectively. When soldering components, insert them from the side that matches their letter.
-
-_TODO: add step summary_
-
-_TODO: add images to steps below_
 
 ### 1. Snap
 
@@ -97,7 +93,7 @@ A TRRS jack needs to be added to each side of the keyboard.
 
 <figure>
   <img src="{{site.baseurl}}/assets/images/soldered-trrs-1.jpg" alt="TRRS"/>
-  <figcaption>Note the TRRS jack is slightly higher on v2.1 PCBs; this was also soldered from the other</figcaption>
+  <figcaption>Note the TRRS jack is slightly higher on v2.1 PCBs; this was also soldered from the other side</figcaption>
 </figure>
 
 ### 5. Reset switches
@@ -109,11 +105,7 @@ A reset switch needs to be added to each side of the keyboard.
   <figcaption>Note the reset switch is slightly higher on v2.1 PCBs; this was also soldered from the other side</figcaption>
 </figure>
 
-### 6. Elite C headers/sockets
-
-_TODO_
-
-### 7. Pin headers
+### 6. Pin headers
 
 While the wires could just be soldered directly, it is a lot easier to assemble or disassemble the keyboard with pluggable sockets and headers. If you have a female-to-female jumper wire, snip of the socket at one end.
 
@@ -125,8 +117,6 @@ One the right side, do as above. Also, solder two jumper cables into the 8 break
   <img src="{{site.baseurl}}/assets/images/jumper-cables.jpg" alt="Thumb jumpers"/>
   <figcaption>Do this for both the left and right sides</figcaption>
 </figure>
-
-_TODO pic of sensor wire_
 
 Headers are needed on the thumb PCBs for the wires to attach to. On both thumb PCBs, solder on a set of right-angled headers.
 
@@ -142,37 +132,32 @@ Headers are also needed on the respective sensor breakout board. For the ADNS, u
   <figcaption>PMW with headers</figcaption>
 </figure>
 
-### 8. Elite Cs
-
-#### Flashing
+### 7. Flashing Elite Cs
 
 Checkout [my QMK fork from GitHub](https://github.com/atulloh/qmk_firmware). See the [QMK docs](https://docs.qmk.fm/#/) on how to set up your build envioronment.
 
-To build for the ADNS sensor, run `make oddball/v2:default`.
+Following are the default build comands for various configurations:
 
-To build for the PMW sensor, run `make oddball/v2:pmw3360`.
-
-To check things are working:
-- flash both sides separately over USB
-- unplug USB
-- link halves with TRRS cable
-- plug in thumb modules with jumper cables
-- plug in sensor module with jumper cables
-- plug in USB to right half
-- check keys of both sides are working
-- check mouse sensor is working; hovering a finger over the sensor should move the mouse cursor
+| Sensor | PCB version | Command |
+| - | - | - |
+| ADNS | 2.0 | `make oddball/v2:default`
+| PMW | 2.0 | `make oddball/v2:pmw3360`
+| ADNS | 2.1 | `make oddball/v2_1:default`
+| PMW | 2.1 | `make oddball/v2_1:pmw3360`
 
 To customise functionality, [make a new keymap](https://docs.qmk.fm/#/newbs_building_firmware).
 
 Special keycodes added for the Oddball keyboard are:
-- `KC_SCROLL`: when held, the trackball becomes a scroll wheel
-- `KC_CPI_1`: CPI option 1
-- `KC_CPI_2`: CPI option 2
-- `KC_CPI_3`: CPI option 3
+
+| - | - |
+| `KC_SCROLL` | When held, the trackball becomes a scroll wheel
+| `KC_CPI_1` | CPI option 1
+| `KC_CPI_2`| CPI option 2
+| `KC_CPI_3` | CPI option 3
 
 In your keymaps `config.h`, you can modify the following:
 
-##### CPI
+#### CPI
 
 ```
 // to override a CPI option, where symbol is either CPI_1, CPI_2 or CPI_3, and value is from 1 to 12000
@@ -180,7 +165,7 @@ In your keymaps `config.h`, you can modify the following:
 #def CPI_1 9000
 ```
 
-##### SCROLL_DIVIDER
+#### SCROLL_DIVIDER
 
 ```
 // to override the scroll speed, change SCROLL_DIVIDER, should be a positive number, where larger numbers equals slower scroll
@@ -188,7 +173,7 @@ In your keymaps `config.h`, you can modify the following:
 #def SCROLL_DIVIDER 20
 ```
 
-#### Soldering
+### 8. Soldering Elite Cs
 
 At this stage you'll want to solder in the Elite C pin sockets.
 
@@ -200,13 +185,25 @@ None of the v2.X PCBs require the bottom strip of pins to be connected, although
 </figure>
 
 <figure>
-  <img src="{{site.baseurl}}/assets/images/sockets-tape.jpg" alt="Sockets taped"/>
+  <img src="{{site.baseurl}}/assets/images/sockets-taped.jpg" alt="Sockets taped"/>
   <figcaption>Add some electrical tape to cover the PCB on the left half where the USB socket can touch the PCB.</figcaption>
 </figure>
 
 Now the Elite-Cs can be socketed; [here is a good guide thanks to 40% Keyboards](https://www.40percent.club/p/socketing-pro-micro.html).
 
 If you want to skip socketing, go ahead. Keep in mind, the case is designed with Mill-Max Low Profile sockets in mind, so you'll need equivalent headers or spacing to algin the USB-C ports with the case.
+
+### 9. Testing
+
+To check things are working:
+- flash both sides separately over USB
+- unplug USB
+- link halves with TRRS cable
+- plug in thumb modules with jumper cables
+- plug in sensor module with jumper cables
+- plug in USB to right half
+- check keys of both sides are working
+- check mouse sensor is working; hovering a finger over the sensor should move the mouse cursor
 
 ### 10. Switches
 
@@ -238,5 +235,10 @@ Insert the bearings into the trackball ring; it's a tight squeese, so you may ne
 - put in thumb plates
 - screw plates in with 18mm M2 bolts and nuts
  - thumb plate on right hand requires the 22mm M2 bolts
+ 
+<figure>
+  <img src="{{site.baseurl}}/assets/images/assembling-v2.jpg" alt="Right assembly"/>
+  <figcaption>Putting it all together was a little fiddly</figcaption>
+</figure>
 
  ### 13. Learn to type again. Good luck!
