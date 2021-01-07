@@ -149,6 +149,7 @@ To customise functionality, [make a new keymap](https://docs.qmk.fm/#/newbs_buil
 
 Special keycodes added for the Oddball keyboard are:
 
+| Keycode | Function |
 | - | - |
 | `KC_SCROLL` | When held, the trackball becomes a scroll wheel
 | `KC_CPI_1` | CPI option 1
@@ -177,7 +178,7 @@ In your keymaps `config.h`, you can modify the following:
 
 At this stage you'll want to solder in the Elite C pin sockets.
 
-None of the v2.X PCBs require the bottom strip of pins to be connected, although the v2.0 PCB requires the right pin as in the following image. This can be done with a single pin header. _This in not required for v2.1+._
+None of the v2.X PCBs require the bottom strip of pins to be connected, although the v2.0 PCB requires the right pin as in the following image. This can be done with a single pin header. _This in not required for PCBs >= v2.1._
 
 <figure>
   <img src="{{site.baseurl}}/assets/images/sockets-front.jpg" alt="Sockets"/>
@@ -186,7 +187,7 @@ None of the v2.X PCBs require the bottom strip of pins to be connected, although
 
 <figure>
   <img src="{{site.baseurl}}/assets/images/sockets-taped.jpg" alt="Sockets taped"/>
-  <figcaption>Add some electrical tape to cover the PCB on the left half where the USB socket can touch the PCB.</figcaption>
+  <figcaption>Add some electrical tape to cover the PCB on the left half where the USB socket can touch the PCB</figcaption>
 </figure>
 
 Now the Elite-Cs can be socketed; [here is a good guide thanks to 40% Keyboards](https://www.40percent.club/p/socketing-pro-micro.html).
@@ -207,7 +208,7 @@ To check things are working:
 
 ### 10. Switches
 
-Before soldering the switches in, cut component legs on the top of the PCB as flush as possible. This will give the switches room to sit flush on the PCB. Then solder your switches in; I often stard with the corners, then fill in the rest.
+Before soldering the switches in, cut component legs on the top of the PCB as flush as possible. This will give the switches room to sit flush on the PCB. Then solder your switches in; I often start with the corners, then fill in the rest.
 
 <figure>
   <img src="{{site.baseurl}}/assets/images/assembly-switches.jpg" alt="Switches"/>
@@ -219,8 +220,8 @@ Before soldering the switches in, cut component legs on the top of the PCB as fl
 Insert the bearings into the trackball ring; it's a tight squeese, so you may need to use something hard/metal to push them in. Then bolt the ring, plate, sensor cover, and sensor, together with the 18mm M2 bolts and nuts.
 
 <figure>
-  <img src="{{site.baseurl}}/assets/images/thumb-test-2.jpg" alt="Thumb module"/>
-  <figcaption>Trackball sensor and mounting ring bolted to switch plate; ignore the pins, they should be right-angled</figcaption>
+  <img src="{{site.baseurl}}/assets/images/thumb-module-scad.png" alt="Thumb module"/>
+  <figcaption>Thumb module; unfortunately didn't get a picture before assembly</figcaption>
 </figure>
 
 ### 12. Assemble plates and modules
