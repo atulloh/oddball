@@ -9,14 +9,14 @@ parent: v2
 
 | Part | Quantity | Link/Store | Notes |
 | - | - | - | - |
-| Elite C 2.0 | 2 | [Keebio](https://keeb.io/products/elite-c-low-profile-version-usb-c-pro-micro-replacement-atmega32u4)
+| Elite C | 2 | [Keebio](https://keeb.io/products/elite-c-low-profile-version-usb-c-pro-micro-replacement-atmega32u4)
 | Mill-Max Low Profile sockets (or equivalent headers) (strip of 12 at 2.54mm) | 4 | [SplitKB](https://splitkb.com/products/mill-max-low-profile-sockets)
 | ADNS 9800 or PMW 3360 breakout board | 1 | [ADNS](https://www.tindie.com/products/jkicklighter/adns-9800-laser-motion-sensor/) [PMW](https://www.tindie.com/products/jkicklighter/pmw3360-motion-sensor/)
 | TRRS socket PJ-320A | 2 | [Amazon](https://www.amazon.com/uxcell-Connector-Female-Socket-PJ-320A/dp/B07KY7CJCJ)
 | Reset switch | 2 | [Sparkfun](https://www.sparkfun.com/products/10791)
 | Through-hole diode | 39 | [Amazon](https://www.amazon.com/McIgIcM-1n4148-switching-Standard-Through/dp/B06XB1R2NK/ref=sr_1_3?dchild=1&keywords=1n4148+diode&qid=1602499817&sr=8-3)
 | Through-hole 4.7k resistor | 2 | [Amazon](https://www.amazon.com/EDGELEC-Resistor-Tolerance-Multiple-Resistance/dp/B07QJB3LGN/ref=sr_1_3?dchild=1&keywords=4.7k+resistor&qid=1602499759&sr=8-3)
-| Hand plate | 2 | [GitHub](https://github.com/atulloh/oddball/blob/master/output/plates/v2.0/leftPlate.stl) | Recommended 1.5mm thick when manufacturing
+| Hand plate | 2 | [GitHub](https://github.com/atulloh/oddball/blob/master/output/plates/v2.0/leftPlate.stl) | Recommend 1.5mm thick when manufacturing
 | Left thumb plate | 1 | [GitHub](https://github.com/atulloh/oddball/blob/master/output/plates/v2.0/leftThumbPlate.stl)
 | Right thumb plate | 1 | [GitHub](https://github.com/atulloh/oddball/blob/master/output/plates/v2.0/rightThumbPlate.stl)
 | Hand PCB v2.1 | 2 | [GitHub](https://github.com/atulloh/oddball/tree/master/output/pcbs/v2.1/hand)
@@ -93,7 +93,7 @@ A TRRS jack needs to be added to each side of the keyboard.
 
 <figure>
   <img src="{{site.baseurl}}/assets/images/soldered-trrs-1.jpg" alt="TRRS"/>
-  <figcaption>Note the TRRS jack is slightly higher on v2.1 PCBs; this was also soldered from the other side</figcaption>
+  <figcaption>Note the TRRS jack is slightly higher on v2.1 PCBs; this was soldered from the other side</figcaption>
 </figure>
 
 ### 5. Reset switches
@@ -102,7 +102,7 @@ A reset switch needs to be added to each side of the keyboard.
 
 <figure>
   <img src="{{site.baseurl}}/assets/images/soldered-reset.jpg" alt="Reset"/>
-  <figcaption>Note the reset switch is slightly higher on v2.1 PCBs; this was also soldered from the other side</figcaption>
+  <figcaption>Note the reset switch is slightly higher on v2.1 PCBs; this was soldered from the other side</figcaption>
 </figure>
 
 ### 6. Pin headers
@@ -125,7 +125,7 @@ Headers are needed on the thumb PCBs for the wires to attach to. On both thumb P
   <figcaption>Do this for both left and right sides</figcaption>
 </figure>
 
-Headers are also needed on the respective sensor breakout board. For the ADNS, use 2x4, stacked, right-angled headers.
+Headers are also needed on the respective sensor breakout board. For the ADNS, use 2x4, stacked, right-angled headers. For the PMW, use a strip of 8 headers.
 
 <figure>
   <img src="{{site.baseurl}}/assets/images/pmw-headers-1.jpg" alt="PMW headers"/>
@@ -242,4 +242,6 @@ Insert the bearings into the trackball ring; it's a tight squeese, so you may ne
   <figcaption>Putting it all together was a little fiddly</figcaption>
 </figure>
 
- ### 13. Learn to type again. Good luck!
+### 13. Send me a pic
+ 
+See the [community builds]({{site.baseurl}}/community-builds) on how to contribute.
