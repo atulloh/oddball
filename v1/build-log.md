@@ -6,8 +6,8 @@ parent: v1
 # v1 Build Log
 
 <figure>
-  <img src="{{site.baseurl}}/assets/images/assembled.jpg" alt="Assembled"/>
-  <figcaption>Here it is! Nearly done; still missing screws long enough to hold the plates down</figcaption>
+  <img src="{{site.baseurl}}/assets/images/pretty-v1.jpg" alt="Assembled"/>
+  <figcaption>Credit to [Aaron Walker](http://instagram.com/aawalkerphoto/) for taking the pretty photo</figcaption>
 </figure>
 
 ## Out with the old
@@ -205,8 +205,6 @@ For manufacturing, I ended up going with [JLCPCB](http://jlcpcb.com/), a Chinese
 </figure>
 
 ## Final thoughts
-
-### (TODO: take a nice picture for y'all!)
 
 I was pretty happy with the result, and achieved all the main things I'd set out to from the start:
 

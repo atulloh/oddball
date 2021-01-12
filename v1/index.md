@@ -4,6 +4,6 @@ has_children: true
 nav_order: 200
 ---
 
-# v1
+# Oddball v1
 
-![]({{site.baseurl}}/assets/images/oddball-home.jpg)
+![Pretty v1]({{site.baseurl}}/assets/images/pretty-v1.jpg)

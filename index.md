@@ -19,19 +19,19 @@ The Oddball is a split mechanical keyboard with an integrated trackball. While d
 
 ## Version 1
 
-![]({{site.baseurl}}/assets/images/oddball-home.jpg)
+![Pretty v1]({{site.baseurl}}/assets/images/pretty-v1.jpg)
 
 - [source files](https://github.com/atulloh/oddball/tree/master/output)
 - [gallery]({{site.baseurl}}/v1/gallery)
 - [build log]({{site.baseurl}}/v1/build-log)
 - [build guide]({{site.baseurl}}/v1/build-guide)
 - dual Teensy 2.0 MCUs (Micro USB)
-- ADNS9800 optical sensor and breakout board from TODO: jack tindie
+- ADNS9800 optical sensor support
 - [v1.0 firmware from QMK](https://github.com/qmk/qmk_firmware/tree/master/keyboards/oddball/v1)
 
 ## Version 2
 
-Nice picture coming soon
+![Pretty v2]({{site.baseurl}}/assets/images/pretty-v2.jpg)
 
 - [source files](https://github.com/atulloh/oddball/tree/master/output)
 - [gallery]({{site.baseurl}}/v2/gallery)
@@ -42,3 +42,7 @@ Nice picture coming soon
 - improved trackball position
 - improved sensor mounting
 - [v2.1 firmware from QMK](https://github.com/qmk/qmk_firmware/tree/master/keyboards/oddball/v2_1)
+
+If you have any questions, [feel free to reach out]({{ site.url }}/about-me).
+
+_Credit to [Aaron Walker](http://instagram.com/aawalkerphoto/) for taking the pretty photos._

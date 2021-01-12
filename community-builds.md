@@ -23,7 +23,7 @@ While I doubt many people will attempt this build, I'd be happy to proven wrong!
             {% assign user = next_user %}
             {% if user contains 'u_' %}
                 {% assign reddit_name = user | slice: 2,-1 %}
-### ![u/{{ reddit_name }}](https://www.reddit.com/user/{{ reddit_name }}) on ![reddit]({{site.baseurl}}/assets/images/reddit-logo.png)
+### ![reddit]({{site.baseurl}}/assets/images/reddit-logo.png =32x) [u/{{ reddit_name }}](https://www.reddit.com/user/{{ reddit_name }})
             {% else %}
 ### {{ user }}
             {% endif %}

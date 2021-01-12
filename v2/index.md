@@ -4,6 +4,6 @@ has_children: true
 nav_order: 300
 ---
 
-# v2
+# Oddball v2
 
-Nice picture coming soon
+![Pretty v1]({{site.baseurl}}/assets/images/pretty-v2.jpg)
