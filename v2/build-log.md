@@ -271,3 +271,21 @@ I'm really happy with how this build turned out. It succeeded with:
 But... there are still a few niggling issues. It is still a pretty hard keyboard to build and assemble. I wish I'd used threaded inserts for the bolts rather than using nuts on the opposing side. I could have taken my time and done a better paint job. I could have merged the hand and thumb PCBs into a single file for cheaper manufacturing.
 
 However, a few people have managed to make their own builds of this design, and with the cleaner code base for others to potentially use or hack away at, I'm happy to leave this project for now. I've got a keyboard that really suits my needs and that I love using. I'll hopefully be able to use it for many years. And if it ever finally breaks down, maybe I'll finally get around to perfecting it... for the third time.
+
+{% if page.comments %} 
+<div id="disqus_thread"></div>
+<script>
+var disqus_config = function () {
+this.page.url = "https://atulloh.github.io/oddball/v2/build-log";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = "build-log-v2"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://oddball-1.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+{% endif %}

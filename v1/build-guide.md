@@ -50,3 +50,21 @@ This build is essentially the same as the [v2 build guide]({{site.baseurl}}/v2/b
 make oddball/v1:default
 make oddball/v1:pmw3360
 ```
+
+{% if page.comments %} 
+<div id="disqus_thread"></div>
+<script>
+var disqus_config = function () {
+this.page.url = "https://atulloh.github.io/oddball/v1/build-guide";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = "build-guide"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://oddball-1.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+{% endif %}
