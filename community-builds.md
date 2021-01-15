@@ -13,7 +13,7 @@ While I doubt many people will attempt this build, I'd be happy to proven wrong!
 - create a PR for it
 - once I merge it, it'll appear under [community builds]({{site.baseurl}}/community-builds) (this page)
 
-## Contibutions
+## Contributions
 
 {% for image in site.static_files %}
     {% if image.path contains 'assets/builds' %}
