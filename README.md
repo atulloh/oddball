@@ -1,8 +1,10 @@
-# Oddball
+# Oddball Keyboard
+
+![](oddball.jpg)
 
 The Oddball is a split mechanical keyboard with an integrated trackball. While drawing inspiration from things like the [Jian](https://github.com/KGOH/Jian-Info) and the [Dactyl Manuform](https://github.com/abstracthat/dactyl-manuform), it is instead designed with a switch plate and PCB to give it durability, replicability, and a more utilitarian look. It has a relatively minimal key layout, typically with 39 keys in total. The PCB is reversible so it can be built with 0, 1 or theoretically 2 trackballs. Due to the height and angle of the optical sensor, and as an ergonomic bonus, it requires a tented case.
 
-[View the docs](https://github.com/atulloh/oddball){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 } 
+## [View the docs](https://atulloh.github.io/oddball)
 
 ## Features
 - split design
@@ -15,9 +17,7 @@ The Oddball is a split mechanical keyboard with an integrated trackball. While d
 - angled thumb clusters
 - QMK firmware
 
-![](oddball.jpg)
-
-Feel free to [reach out](https://github.com/atulloh/oddball/about-me) if you have any questions.
+Feel free to [reach out](https://atulloh.github.io/oddball/about-me) if you have any questions.
 
 # License
 
