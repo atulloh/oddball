@@ -46,6 +46,6 @@ The Oddball is a split mechanical keyboard with an integrated trackball. While d
 - improved sensor mounting
 - [v2.1 firmware from QMK](https://github.com/qmk/qmk_firmware/tree/master/keyboards/oddball/v2_1)
 
-If you have any questions, [feel free to reach out]({{ site.url }}/oddball/about-me).
+If you have any questions, [feel free to reach out]({{ site.baseurl }}/about-me).
 
 _Credit to [Aaron Walker](http://instagram.com/aawalkerphoto/) for taking the pretty photos._

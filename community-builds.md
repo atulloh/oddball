@@ -23,8 +23,8 @@ While I doubt many people will attempt this build, I'd be happy to proven wrong!
             {% assign user = next_user %}
             {% if user contains 'u_' %}
                 {% assign reddit_name = user | slice: 2,99 %}
-<img src="{{ site.url}}/assets/images/reddit-logo.png" width="32" height="32" alt="" style="display: inline;"/>
-<h3 style="display: inline;"><a href="https://www.reddit.com/user/{{ reddit_name }}">u/{{ reddit_name }})</a></h3>
+<img src="{{ site.baseurl }}/assets/images/reddit-logo.png" width="32" height="32" alt="" style="display: inline;"/>
+<h3 style="display: inline;"><a href="https://www.reddit.com/user/{{ reddit_name }}">u/{{ reddit_name }}</a></h3>
             {% else %}
 ### {{ user }}
             {% endif %}
@@ -37,6 +37,6 @@ While I doubt many people will attempt this build, I'd be happy to proven wrong!
 {% assign paths = build.path | split: "/" %}
 {% assign images = build.images | split: ", " %}
 {% for image in images %}
-![image]({{ site.url }}/{{ paths[0] }}/{{ paths[1] }}/{{ image }})
+![image]({{ site.baseurl }}/{{ paths[0] }}/{{ paths[1] }}/{{ image }})
 {% endfor %}
 {% endfor %}

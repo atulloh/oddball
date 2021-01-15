@@ -3,7 +3,7 @@ title: Gallery (low quality)
 parent: v2
 ---
 
-# v2 Gallery
+# v2 Gallery (low quality)
 
 _Credit to [Aaron Walker](http://instagram.com/aawalkerphoto/) for taking the pretty photos._
 
