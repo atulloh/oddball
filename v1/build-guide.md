@@ -35,7 +35,6 @@ parent: v1
 | 0.98" / 25mm diameter trackball | 1 | [Mini pool balls](https://www.amazon.com/CAOREN-16pcs-Billiard-Children-Accessories/dp/B0836WQQF5) | Any hard, low friction 0.98” / 25mm diameter ball will suffice
 | MX style switch | 39 |
 
-
 ## Steps
 
 This build is essentially the same as the [v2 build guide]({{site.baseurl}}/v2/build-guide), with a few differences in the v1.0 PCB:

@@ -1,4 +1,5 @@
 ---
+title: Overview
 nav_order: 100
 ---
 
@@ -21,10 +22,10 @@ The Oddball is a split mechanical keyboard with an integrated trackball. While d
 
 ## Version 1
 
-![Pretty v1]({{site.baseurl}}/assets/images/pretty-v1.jpg)
+![Pretty v1]({{site.baseurl}}/assets/images/gallery-v1-small-1.jpg)
 
 - [source files](https://github.com/atulloh/oddball/tree/master/output)
-- [gallery]({{site.baseurl}}/v1/gallery)
+- gallery [high quality]({{site.baseurl}}/v1/gallery-high-quality) / [low quality]({{site.baseurl}}/v1/gallery-low-quality)
 - [build log]({{site.baseurl}}/v1/build-log)
 - [build guide]({{site.baseurl}}/v1/build-guide)
 - dual Teensy 2.0 MCUs (Micro USB)
@@ -33,10 +34,10 @@ The Oddball is a split mechanical keyboard with an integrated trackball. While d
 
 ## Version 2
 
-![Pretty v2]({{site.baseurl}}/assets/images/pretty-v2.jpg)
+![Pretty v2]({{site.baseurl}}/assets/images/gallery-v2-small-6.jpg)
 
 - [source files](https://github.com/atulloh/oddball/tree/master/output)
-- [gallery]({{site.baseurl}}/v2/gallery)
+- gallery [high quality]({{site.baseurl}}/v2/gallery-high-quality) / [low quality]({{site.baseurl}}/v2/gallery-low-quality)
 - [build log]({{site.baseurl}}/v2/build-log)
 - [build guide]({{site.baseurl}}/v2/build-guide)
 - dual Elite C MCUs (USB-C)

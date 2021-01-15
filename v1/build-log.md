@@ -6,8 +6,8 @@ parent: v1
 # v1 Build Log
 
 <figure>
-  <img src="{{site.baseurl}}/assets/images/pretty-v1.jpg" alt="Assembled"/>
-  <figcaption>Credit to [Aaron Walker](http://instagram.com/aawalkerphoto/) for taking the pretty photo</figcaption>
+  <img src="{{site.baseurl}}/assets/images/gallery-v1-small-7.jpg" alt="Pretty"/>
+  <figcaption>Tada</figcaption>
 </figure>
 
 ## Out with the old

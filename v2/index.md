@@ -6,4 +6,4 @@ nav_order: 300
 
 # Oddball v2
 
-![Pretty v1]({{site.baseurl}}/assets/images/pretty-v2.jpg)
+![Pretty v2]({{site.baseurl}}/assets/images/gallery-v2-small-4.jpg)

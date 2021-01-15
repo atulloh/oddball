@@ -6,8 +6,8 @@ parent: v2
 # v2 Build Log
 
 <figure>
-  <img src="{{site.baseurl}}/assets/images/pretty-v2.jpg" alt="Pretty"/>
-  <figcaption>Credit to [Aaron Walker](http://instagram.com/aawalkerphoto/) for taking the pretty photo</figcaption>
+  <img src="{{site.baseurl}}/assets/images/gallery-v2-small-5.jpg" alt="Pretty"/>
+  <figcaption>Tada</figcaption>
 </figure>
 
 I've been using my [Oddball v1]({{site.baseurl}}/v1/build-log) for around 6 months. I really like it; having a trackball embedded in the keyboard really exceeded my expectations. It helps with all kinds of everyday tasks, and saves you from blindly having to find your way to your mouse and back again. I was actually finding it a bit limiting when switching back to a more traditional keyboard with a separate mouse; so much so I decided to build another so I could have one for both work and at home. However, if I was going to make another, there were some improvements I wanted to make!
