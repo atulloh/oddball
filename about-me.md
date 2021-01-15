@@ -3,6 +3,8 @@ title: About Me
 nav_order: 500
 ---
 
+# About Me
+
 My name is Alex; coding by day and night. Making keyboards for fun. Feel free to reach out if you have any questions!
 
 <img src="{{ site.baseurl }}/assets/images/reddit-logo.png" width="24" height="24" alt="" /> [u/tullonator](https://www.reddit.com/user/tullonator)
