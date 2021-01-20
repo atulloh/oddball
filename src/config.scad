@@ -83,7 +83,14 @@ PRO_MICRO_SIZE = [17.8, 33];
 PRO_MICRO_USB_OVERHANG = 2;
 
 MCU_PCB_OFFSET = 3.5; // socket or header height
-MCU_PCB_THICKNESS = 1; // Elite C
+
+// Elite C v3.1
+// MCU_PCB_THICKNESS = 1;
+// MCU_USB_OFFSET = MCU_PCB_THICKNESS;
+
+// Elite C v4
+MCU_PCB_THICKNESS = 1.6; 
+MCU_USB_OFFSET = 0;
 
 // case
 
