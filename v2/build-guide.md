@@ -23,8 +23,8 @@ parent: v2
 | Thumb PCB v2.1 | 2 | [GitHub](https://github.com/atulloh/oddball/tree/master/output/pcbs/v2.1/thumb)
 | Male-to-male TRRS cable | 1 | [Google](https://www.google.com/search?q=male+to+male+trrs+cable)
 | USB Type-C cable | 1 | [Google](https://www.google.com/search?q=usb+c+cable) | To connect keyboard to host (e.g. PC); you probably want USB-A on the other end
-| Left case | 1 | [GitHub](https://github.com/atulloh/oddball/tree/master/output/case/v2.0/leftCase.stl) | If using an Elite C v4, you can try using these [untested case files], as the USB cutouts will be slightly different
-| Right case | 1 | [GitHub](https://github.com/atulloh/oddball/tree/master/output/case/v2.0/rightCase.stl) | If using an Elite C v4, you can try using these [untested case files], as the USB cutouts will be slightly different
+| Left case | 1 | [GitHub](https://github.com/atulloh/oddball/tree/master/output/case/v2.0/leftCase.stl) | If using an Elite C v4, you can try using these [untested case files](https://github.com/atulloh/oddball/tree/fix/10-elite-c-cutout/output/case/v2.0), as the USB cutouts will be slightly different
+| Right case | 1 | [GitHub](https://github.com/atulloh/oddball/tree/master/output/case/v2.0/rightCase.stl) | If using an Elite C v4, you can try using these [untested case files](https://github.com/atulloh/oddball/tree/fix/10-elite-c-cutout/output/case/v2.0), as the USB cutouts will be slightly different
 | Bearing mount | 1 | [GitHub](https://github.com/atulloh/oddball/tree/master/output/case/v2.0/bearingMount.stl) |
 | ADNS or PMW cover | 1 | [ADNS](https://github.com/atulloh/oddball/tree/master/output/case/v1.0/adnsCover.stl) [PMW](https://github.com/atulloh/oddball/tree/master/output/case/v1.0/pmwCover.stl) 
 | Right-angled pin headers (strip of 4 at 2.54mm) | 4 (x4) | [SparkFun](https://www.sparkfun.com/products/553) | Will need [stacked pin headers](https://core-electronics.com.au/break-away-headers-right-angle-2x40.html?utm_source=google_shopping&gclid=CjwKCAiA2O39BRBjEiwApB2IkuX_UGqj735nCN4a0wE4y39f2ijxMvBihztlwV53G4i79JJKzz9BshoC6ngQAvD_BwE) if using the ADNS9800
