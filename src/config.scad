@@ -126,7 +126,14 @@ THUMB_BOLT_HOLES =
     [[0.95, 0.925],
      [1.05, 0.175]];
 
+// single right thumb key
 THUMB_TRACKBALL_GRID = [[0, 0], [1.43, 0, "pmw" /* "adns" */ ]];
+
+// dual right thumb key
+// THUMB_TRACKBALL_GRID = [
+//     [-1, -0.1],
+//     [0, 0], 
+//     [1.43, 0, "pmw" /* "adns" */ ]];
 
 THUMB_TRACKBALL_BOLT_HOLES = 
     [[0.95, 0.925],
